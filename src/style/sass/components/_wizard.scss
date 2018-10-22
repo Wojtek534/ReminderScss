@@ -1,0 +1,97 @@
+/*.WizardStep {
+    background-color: $primary-color;
+    color: $white-color;
+    border-top-color: $primary-color;
+    border-bottom-color: $primary-color;
+}
+
+.WizardStep.ActiveStep {
+    background-color: $primary-color;
+}
+
+.WizardStep.Past {
+    color: white
+}
+.WizardStep {
+  line-height: 13px;
+  border-bottom: 1px solid $wizard-color;
+  border-top: 1px solid $wizard-color;
+  vertical-align: middle;
+  letter-spacing: 0.5px; }
+
+.WizardStep.LastStep {
+  border-right: 1px solid $wizard-color; }
+
+*/
+.WizardStep {
+  border-top: 1px solid $wizard-color;
+  border-bottom: 1px solid $wizard-color;
+  a {
+    cursor: default;
+  }
+}
+.WizardStep:last-child {
+  border-right: 1px solid $wizard-color
+}
+
+.WizardStep.ActiveStep {
+    background-color: $wizard-color;
+    color: #FFF;
+}
+
+.WizardStep.ActiveStep:before {
+    border-bottom-color: $wizard-color;
+    border-top-color: $wizard-color;
+}
+
+.WizardStep.ActiveStep a,
+.WizardStep.ActiveStep a:link,
+.WizardStep.ActiveStep a[disabled="disabled"],
+.WizardStep.ActiveStep a[disabled="disabled"]:hover {
+    color: #FFF !important;
+}
+
+.WizardStep a,
+.WizardStep a:link,
+.WizardStep a[disabled="disabled"],
+.WizardStep a[disabled="disabled"]:hover {
+    color: #4D5C66 !important;
+}
+
+.WizardStep.Past {
+    background-color: $wizard-color;
+}
+
+.WizardStep.Past:before {
+    border-bottom-color: $wizard-color;
+    border-top-color: $wizard-color;
+}
+
+.WizardStep.Past a,
+.WizardStep.Past a:link,
+.WizardStep.Past a[disabled="disabled"],
+.WizardStep.Past a[disabled="disabled"]:hover {
+    color: #ffffff !important;
+}
+
+.WizardStep.Past:after {
+    border-right-color: #e2e2e2;
+    border-top-color: #e2e2e2;
+}
+
+.WizardStep.Past a:hover,
+.WizardStep.Past a:link:hover,
+.WizardStep.Past a[disabled="disabled"]:hover,
+.WizardStep.Past a[disabled="disabled"]:hover {
+    text-decoration: none;
+    cursor: default;
+}
+.WizardStep:after {
+  border-right: 1px solid $wizard-color;
+  border-top: 1px solid $wizard-color;
+}
+.WizardStep:hover,
+.WizardStep.Past:hover,
+.WizardStep.ActiveStep:hover{
+  cursor: default;
+}

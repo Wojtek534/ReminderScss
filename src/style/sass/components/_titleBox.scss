@@ -1,0 +1,10 @@
+.title-box {
+  border-bottom: 1px solid $border-color;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0px 5px;
+  padding: 5px;
+}
+.title-box::first-letter {
+  text-transform: uppercase;
+}

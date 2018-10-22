@@ -1,0 +1,96 @@
+.Section {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid $border-color;
+    margin: 15px 0px 15px 0px;
+    border-radius: $border-radius;
+}
+
+.Section_header {
+    border-bottom: 1px solid $border-color;
+    display: table;
+    margin-top: 0;
+    min-height: 35px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.Section_header .Btn {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.Section__title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.Section__title::first-letter {
+    text-transform: uppercase;
+}
+
+.Section_header .Button {
+    text-transform: none;
+}
+
+table.TableRecords {
+    box-shadow: none;
+    margin: 0px;
+}
+
+.ActionContainer {
+    margin-bottom: 10px;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 5px;
+}
+
+.SectionMini {
+    a.ListNavigation_PageNumber:link,
+    span.ListNavigation_CurrentPageNumber,
+    span.ListNavigation_Ellipsis,
+    a.ListNavigation_Previous:link,
+    a.ListNavigation_Next:link {
+        font-size: 10px;
+    }
+}
+
+.SectionMini table.TableRecords {
+    font-size: 10px;
+}
+.SectionMini div.Counter_Message {
+  font-size: 10px;
+}
+.SectionMini table .TableLink,
+.SectionMini table .TableLink a {
+    font-size: 11px;
+}
+
+.SectionExpandable .SectionExpandable_header {
+    box-shadow: none;
+    border: none;
+    padding: 8px;
+    background: #f7f7f7;
+}
+
+.SectionExpandable__title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.SectionExpandable__title::first-letter {
+    text-transform: uppercase;
+}
+
+.SectionExpandable .SectionExpandable_header {
+    padding: 8px !important;
+}
+
+.SectionExpandable .SectionExpandable_header .Heading2 {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+.SectionExpandable.expanded .SectionExpandable_header .Heading2 {
+    font-size: 12px;
+    font-weight: 500;
+}

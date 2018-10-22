@@ -1,0 +1,27 @@
+a.ListNavigation_PageNumber:link:hover,
+span.ListNavigation_CurrentPageNumber:hover,
+span.ListNavigation_Ellipsis:hover {
+    background-color: $primary-color;
+    color: $white-color;
+
+}
+
+a.ListNavigation_PageNumber:link,
+a.ListNavigation_PageNumber:visited,
+a.ListNavigation_PageNumber:active,
+span.ListNavigation_CurrentPageNumber,
+span.ListNavigation_Ellipsis,
+a.ListNavigation_Previous:link,
+a.ListNavigation_Next:link {
+    border-radius: $border-radius;
+    font-weight: 500;
+    border: 1px solid #999
+}
+
+a.ListNavigation_Previous:link:hover,
+a.ListNavigation_Previous:visited:hover,
+a.ListNavigation_Next:link:hover
+{
+  background: $primary-color;
+  color: $white-color;
+}

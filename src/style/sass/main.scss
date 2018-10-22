@@ -1,0 +1,39 @@
+// domyślny zestaw theme dla Dublin
+/*
+@import './themes/_silkDublin.scss';
+@import './themes/_silkDublinTheme.scss';
+@import './themes/_silkPattern.scss';
+*/
+// do generowania css
+@import './abstracts/_variables.scss';
+@import './themes/_outsystemsTheme.scss';
+@import './abstracts/_functions.scss';
+@import './abstracts/_mixins.scss';
+@import './abstracts/_mixinsLabel.scss';
+@import './abstracts/_mixinsButton.scss';
+@import './base/_base.scss';
+@import './base/_animations.scss';
+@import './base/_typography.scss';
+@import './base/_utilities.scss';
+@import './components/_badge.scss';
+@import './components/_calendar.scss';
+@import './components/_financeTable.scss';
+@import './components/_form.scss';
+@import './components/_label.scss';
+@import './components/_button.scss';
+@import './components/_buttonGroup.scss';
+@import './components/_mergeContainer.scss';
+@import './components/_modal.scss';
+@import './components/_navigation.scss';
+@import './components/_panel.scss';
+@import './components/_radioButton.scss';
+@import './components/_section.scss';
+@import './components/_select2.scss';
+@import './components/_titleBox.scss';
+@import './components/_wizard.scss';
+@import './components/_wrapper.scss';
+@import './layout/_archive.scss';
+@import './layout/_cardBlock.scss';
+@import './layout/_header.scss';
+@import './layout/_sideMenu.scss';
+@import './layout/_table.scss';

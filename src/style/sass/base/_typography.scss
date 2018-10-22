@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('/RichWidgets/fonts/Roboto-Regular-webfont.eot');
+    src: url('/RichWidgets/fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('/RichWidgets/fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/RichWidgets/fonts/Roboto-Bold-webfont.eot');
+    src: url('/RichWidgets/fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('/RichWidgets/fonts/Roboto-Bold-webfont.woff') format('woff'), url('/RichWidgets/fonts/Roboto-Bold-webfont.ttf') format('truetype'), url('/RichWidgets/fonts/Roboto-Bold-webfont.svg#robotobold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800');
+
+.Heading1 {
+    font-weight: 700;
+    font-size: 26px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: $title-color;
+}
+
+span.Heading1 {
+    display: block;
+}
+.Heading2 {
+  font-weight: 500;
+  font-size: 22px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: $title-color;
+}
+
+span.Heading2 {
+  display: block;
+}
+.Heading3 {
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: $title-color;
+}
+
+span.Heading3 {
+  display: block;
+}
+p {
+    font-size: 12px;
+    font-weight: 1;
+}
+
+.Upper {
+    text-transform: uppercase;
+}
+
+.Bold {
+    font-weight: 600;
+}
+
+.SemiBold {
+    font-weight: 500;
+}
+
+.fa {
+    margin: 5px;
+}
+
+.Text_Note {
+    color: $light-text-color;
+    margin-right: 3px;
+    font-weight: 400;
+}
+
+.Success {
+    color: $success-color;
+}
+
+.Danger {
+    color: $danger-color;
+}
+
+.Warning {
+    color: $warning-color;
+}
+
+.Info {
+    color: $info-color;
+}
+
+.Cancel {
+    color: $cancel-color;
+}
+.NotActive {
+  color: $grey-color;
+}

@@ -1,0 +1,26 @@
+.Page {
+    overflow-x: hidden;
+}
+.Login_Footer {
+  background: none;
+}
+.Login_Info {
+  color: #fff;
+}
+.Title_Section {
+    padding-top: 65px;
+}
+
+.Title_Section .Heading1,
+.Title_Section .Heading2,
+.Title_Section .Heading3 {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.Title_Section .ModalContainer .Heading1 {
+  margin-top: 0px;
+  padding-left: 15px;
+}
+.Title_Section {
+    background-color: $white-color;
+}

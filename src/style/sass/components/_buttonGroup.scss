@@ -1,0 +1,10 @@
+.ButtonGroup_button.active {
+  background-color: $primary-color;
+  color: $white-color;
+}
+.ButtonGroup_button * {
+  color: inherit;
+}
+.ButtonGroup_button.Button:hover {
+  color: $black-color;
+}

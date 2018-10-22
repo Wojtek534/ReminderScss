@@ -1,0 +1,87 @@
+// Gwiazdka przy wymaganych pozycjach
+.EditRecord .MandatoryCaption::after {
+    color: red;
+    content: "*";
+    position: static;
+    vertical-align: middle;
+}
+
+table {
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: $border-radius;
+}
+
+table.TableRecords {
+    padding: 25px;
+    //border: 1px solid #dadbde;
+    //box-shadow: 0px 1px 2px rgba(211,211,211,0.5);
+    //border: none;
+    margin: 5px 0px;
+}
+
+.TableRecords_Header {
+    color: $title-color;
+    text-transform: none;
+    font-weight: 500;
+}
+
+.TableRecords_Header::first-letter {
+    text-transform: uppercase;
+}
+
+table[cellSpacing] {
+    border-collapse: collapse;
+}
+
+.TableRecords_OddLine {
+    vertical-align: middle;
+}
+
+.TableRecords_EvenLine {
+    vertical-align: middle;
+}
+
+.ListRecords {
+    color: $text-color;
+}
+
+.Section .Section_content table {
+    border: none
+}
+
+table.TableRecords.NoBorder {
+    border: none;
+}
+
+.TableRecords_OddLine:not(:first-child),
+.TableRecords_EvenLine:not(:first-child) {
+    border-left: 0;
+}
+
+.TableRecords_OddLine {
+    vertical-align: middle;
+    max-width: 250px;
+    overflow-wrap: break-word;
+    background-color: #ffffff;
+}
+
+.TableRecords_EvenLine {
+    vertical-align: middle;
+    max-width: 250px;
+    overflow-wrap: break-word;
+    background-color: #ffffff;
+}
+
+.TableRecords_OddLine,
+.TableRecords_EvenLine {
+    border-bottom: 1px solid $border-color;
+}
+
+table .TableActions {
+    width: 150px;
+}
+
+table .TableActions::first-letter {
+    text-transform: uppercase;
+}

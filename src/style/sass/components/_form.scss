@@ -1,0 +1,119 @@
+input[readonly="readonly"] {
+    cursor: default;
+}
+
+textarea[readonly="readonly"] {
+    cursor: default;
+}
+
+select[readonly="readonly"] {
+    cursor: default;
+}
+
+.Form>div,
+.Form>span>div {
+    margin-left: 10px;
+}
+
+.Form textarea.ReadOnly[readonly="readonly"],
+.Form textarea.ReadOnly[disabled="disabled"],
+.Form select.ReadOnly[disabled="disabled"],
+.Form input.ReadOnly[readonly="readonly"],
+.Form input.ReadOnly[disabled="disabled"],
+.Form input[disabled="disabled"].ReadOnly:not(.Not_Valid),
+.Form input[readonly="readonly"].ReadOnly:not(.Not_Valid),
+.Form textarea[disabled="disabled"].ReadOnly:not(.Not_Valid),
+.Form textarea[readonly="readonly"].ReadOnly:not(.Not_Valid),
+.Form select[disabled="disabled"].ReadOnly:not(.Not_Valid),
+.Form select[readonly="readonly"].ReadOnly:not(.Not_Valid),
+textarea[disabled="disabled"],
+textarea[readonly="readonly"],
+select[disabled="disabled"],
+input[readonly="readonly"],
+input[disabled="disabled"] {
+    cursor: default;
+    border-radius: $border-radius;
+}
+
+.OSAutoMarginTop {
+    margin-top: 10px;
+}
+
+select,
+textarea,
+input {
+    margin-top: 3px;
+    color: $text-color;
+}
+
+.Form label {
+    color: $text-color;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.ListRecords .label {
+    color: $text-color;
+    font-weight: 500;
+}
+
+.EditRecord_Caption {
+    color: $grey-color;
+}
+
+.ListRecords {
+    color: $grey-color;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: $light-grey-color;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: $light-grey-color;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: $light-grey-color;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $light-grey-color;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $light-grey-color;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single {
+    background-color: $white-color;
+    cursor: default;
+}
+
+// Gwiazdka przy wymaganych pozycjach
+.Form .MandatoryCaption::after {
+    color: red;
+    content: "*";
+    position: static;
+    vertical-align: middle;
+}
+
+input.OSFillParent,
+button.OSFillParent,
+select.OSFillParent,
+textarea.OSFillParent {
+    display: block;
+}
+.Form input.SmartInput_Changed.ReadOnly+a.SmartInput_Undo,
+.Form textarea.SmartInput_Changed.ReadOnly+a.SmartInput_Undo,
+.Form select.SmartInput_Changed.ReadOnly+a.SmartInput_Undo {
+    display: none;
+}
+

@@ -1,0 +1,98 @@
+// Main scss file
+//
+//Manager
+$dublin: 0;
+$lisbon: 1;
+$dev: 0;
+//
+// Core
+$main-color: #4D5C66 !default;
+$secondary-color: #ffffff !default;
+$header-color: #262E33 !default;
+$title-color: $main-color!default;
+//
+@if ($dublin==1) {
+    // Dublin Theme Colors
+    $main-color: #4D5C66; //#4D5C66 // #262E33
+    $secondary-color: #ffffff; //#ffffff
+    // Header Colors
+    $header-color: #262E33; //#262E33 #282B2D
+    $title-color: lighten($main-color, 10%); //#ffffff
+}
+
+@if ($lisbon==1) {
+    // LisbonTheme Colors
+    $main-color: #4D5C66; //#4D5C66 // #262E33
+    $secondary-color: #ffffff; //#ffffff
+    // Header Colors
+    $header-color: #4D5C66; //#262E33
+    $title-color: #ffffff; //#ffffff
+}
+
+// Background
+$background-color: #edf1f3; //#edf1f3
+// Standard
+$black-color: #000000;
+$white-color: #ffffff;
+//
+$heading-color: #4e5c67; // #5d5858 #4e5c67 #2C3539
+$text-color: #2C3539;
+$rest-color: #ffffff;
+$hr-color: #191919;
+// Button colors
+$red-color: #990000; // $990000  #f44336
+$green-color: #006f49; // #006f49 #4CAF50
+$blue-color: #008CBA; // #4747FF
+$purple-color: #8000ff;
+$grey-color: #666666;
+$yellow-color: #ecd600;
+$orange-color: #EE7600;
+// Fonts and typography
+$font: 'Roboto',
+sans-serif;
+$base-font: 12px;
+$base-weight: 300;
+$base-line-height: 1;
+//
+@import "scss//development/development";
+@import "scss/themeOutsystems/themeLisbon";
+@import "scss/themeOutsystems/themeDublin";
+// Detach development before copy css!
+@if ($dev==1) {
+    @include Development;
+}
+
+@if ($lisbon==1) {
+    @include LisbonTheme;
+}
+
+@if($dublin==1) {
+    @include DublinTheme;
+}
+
+@import "scss/fontsImport";
+//@import "scss/typography";
+//@import "scss/extraButtons";
+//@import "scss/table";
+//@import "scss/libraries";
+//@import 'scss/components/components';
+//@import 'scss/form/form';
+@import 'scss/newButtons/Buttons';
+/*
+// Dublin Theme Colors
+$main-color: #282B2D; //#4D5C66 // #262E33
+$secondary-color: #ffffff; //#ffffff
+// Header Colors
+$header-color: #4D5C66; //#262E33 #282B2D
+$title-color: #4D5C66; //#ffffff
+*/
+
+
+/*
+// Lisbon Colors
+$main-color: #4D5C66; //#4D5C66 // #262E33
+$secondary-color: #ffffff; //#ffffff
+// Header Colors
+$header-color: #4D5C66; //#262E33
+$title-color: #ffffff; //#ffffff
+*/

@@ -1,0 +1,63 @@
+  .ArchiveContainer a,
+  .ArchiveContainer a:link,
+  .desktop .ArchiveContainer a:link,
+  .desktop .ArchiveContainer a {
+      color: #404040
+  }
+
+  .ArchiveContainer a:hover,
+  .ArchiveContainer a:link:hover,
+  .desktop .ArchiveContainer a:hover,
+  .desktop .ArchiveContainer a:link:hover {
+      color: #0c0c0c
+  }
+
+  .ArchiveLink {
+      color: #008CBA !important;
+      text-decoration: underline !important;
+      font-weight: 700;
+  }
+
+  .IconRowContainer {
+      max-width: 100px;
+  }
+
+  .ArchiveIcon {
+      margin: 5px 0px 5px 0px
+  }
+
+  .FolderIcon {
+      color: #f7cd23 !important;
+  }
+
+  .ReturnIcon {
+      color: green !important;
+  }
+
+  .WordIcon {
+      color: #3B5998 !important;
+  }
+
+  .OutlookIcon {
+      color: #3B5998 !important;
+  }
+
+  .ExcelIcon {
+      color: #00592D !important;
+  }
+
+  .PdfIcon {
+      color: #a21918 !important;
+  }
+
+  .PowerPointIcon {
+      color: #EA3C00 !important;
+  }
+
+  .ImageIcon {
+      color: #3171b7 !important;
+  }
+
+  .FileIcon {
+      color: grey;
+  }

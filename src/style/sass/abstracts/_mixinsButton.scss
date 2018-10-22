@@ -1,0 +1,264 @@
+@mixin PrimaryBtn ($CustomName, $MainColor, $SubColor) {
+    .Btn.Primary.#{$CustomName} {
+        color: $SubColor;
+        background: $MainColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+    .Btn.Primary.#{$CustomName}:hover,
+    .desktop .Btn.Primary.#{$CustomName}:hover {
+        background-color: darken($MainColor, 10%);
+        color: $SubColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+    .Btn.Primary.#{$CustomName}:hover:active {
+        background-color: darken($MainColor, 10%);
+        color: $SubColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+}
+
+@mixin DefaultPrimaryBtn ($MainColor, $SubColor) {
+    .Btn.Primary {
+        color: $SubColor;
+        background: $MainColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+    .Btn.Primary:hover ,
+    .desktop .Btn.Primary:hover{
+      background-color: darken($MainColor, 10%);
+      color: $SubColor;
+      border-color: $MainColor;
+      text-decoration: none;
+    }
+    .Btn.Primary:hover:active {
+        background-color: darken($MainColor, 10%);
+        color: $SubColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+}
+
+@mixin WarningPrimaryBtn ($CustomName, $MainColor, $SubColor) {
+    .Btn.Primary.#{$CustomName} {
+        color: $black-color;
+        background: $MainColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+    .Btn.Primary.#{$CustomName}:hover,
+    .desktop .Btn.Primary.#{$CustomName}:hover,{
+        background-color: $SubColor;
+        color: $black-color;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+    .Btn.Primary.#{$CustomName}:hover:active {
+        background-color: $SubColor;
+        color: $black-color;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+}
+
+// Alternatywny typ przycisku - Kolorowy tekst + białe tło
+@mixin SecondaryBtn ($CustomName, $MainColor, $SubColor) {
+    .Btn.Secondary.#{$CustomName} {
+        color: $MainColor;
+        background: $SubColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+    .Btn.Secondary.#{$CustomName}:hover,
+    .desktop .Btn.Secondary.#{$CustomName}:hover {
+        background-color: $MainColor;
+        color: $SubColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+    .Btn.Secondary.#{$CustomName}:hover:active {
+        background-color: $MainColor;
+        color: $SubColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+}
+
+// Alternatywny typ przycisku - Kolorowy tekst + białe tło
+@mixin DefaultSecondaryBtn ($MainColor, $SubColor) {
+    .Btn.Secondary {
+        color: $MainColor;
+        background: $SubColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+    .Btn.Secondary:hover,
+    .desktop .Btn.Secondary:hover {
+        background-color: $MainColor;
+        color: $SubColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+    .Btn.Secondary:hover:active {
+        background-color: $MainColor;
+        color: $SubColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+}
+
+@mixin WarningSecondaryBtn ($CustomName, $MainColor, $SubColor) {
+    .Btn.Secondary.#{$CustomName} {
+        color: $black-color;
+        background: $SubColor;
+        border-color: $MainColor;
+        text-decoration: none;
+    }
+    .Btn.Secondary.#{$CustomName}:hover,
+    .desktop .Btn.Secondary.#{$CustomName}:hover {
+        background-color: $MainColor;
+        color: $black-color;
+        border-color: $SubColor;
+        text-decoration: none;
+    }
+    .Btn.Secondary.#{$CustomName}:hover:active {
+        background-color: $MainColor;
+        color: $black-color;
+        border-color: $SubColor;
+        text-decoration: none;
+    }
+}
+
+@mixin TertiaryBtn ($CustomName, $MainColor, $SubColor) {
+    .Btn.Tertiary.#{$CustomName} {
+        color: $MainColor;
+        text-decoration: underline;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    .Btn.Tertiary.#{$CustomName}:hover,
+    .desktop .Btn.Tertiary.#{$CustomName}:hover {
+        color: darken($MainColor, 10%);
+        text-decoration: underline;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    .Btn.Tertiary.#{$CustomName}:hover:active {
+        color: darken($MainColor, 10%);
+        text-decoration: underline;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+@mixin DefaultTertiaryBtn ($MainColor, $SubColor) {
+    .Btn.Tertiary {
+        color: $MainColor;
+        text-decoration: underline;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    .Btn.Tertiary:hover,
+    .desktop .Btn.Tertiary:hover {
+        color: darken($MainColor, 10%);
+        text-decoration: underline;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    .Btn.Tertiary:hover:active {
+        color: darken($MainColor, 10%);
+        text-decoration: underline;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+@mixin WarningTertiaryBtn ($CustomName, $MainColor, $SubColor) {
+    .Btn.Tertiary.#{$CustomName} {
+        color: $MainColor;
+        text-decoration: underline;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    .Btn.Tertiary.#{$CustomName}:hover,
+    .desktop .Btn.Tertiary.#{$CustomName}:hover {
+        color: darken($MainColor, 10%);
+        text-decoration: underline;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    .Btn.Tertiary.#{$CustomName}:hover:active {
+        color: darken($MainColor, 10%);
+        text-decoration: underline;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+@mixin DefaultBtnPack ($Main, $Sub) {
+    @include DefaultPrimaryBtn($Main, $Sub);
+    @include DefaultSecondaryBtn($Main, $Sub);
+    @include DefaultTertiaryBtn($Main, $Sub);
+}
+
+@mixin WarningBtnPack ($Name, $Main, $Sub) {
+    @include WarningPrimaryBtn($Name, $Main, $Sub);
+    @include WarningSecondaryBtn($Name, $Main, $Sub);
+    @include WarningTertiaryBtn($Name, $Main, $Sub);
+}
+
+@mixin BtnPack ($Name, $Main, $Sub) {
+    @include PrimaryBtn($Name, $Main, $Sub);
+    @include SecondaryBtn($Name, $Main, $Sub);
+    @include TertiaryBtn($Name, $Main, $Sub);
+}
+
+// Btn Size
+@mixin SizeXSmall() {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 5px 5px 5px 5px;
+    line-height: 12px;
+    white-space: nowrap;
+    min-width: 10px;
+    max-width: 50px;
+}
+
+@mixin SizeSmall() {
+    font-size: 9px;
+    font-weight: 500;
+    padding: 5px 7px 5px 7px;
+    line-height: 16px;
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+@mixin SizeNormal() {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 10px 5px 10px;
+    line-height: 20px;
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+@mixin SizeLarge() {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 15px 5px 15px;
+    line-height: 24px;
+    white-space: nowrap;
+    min-width: 120px;
+}

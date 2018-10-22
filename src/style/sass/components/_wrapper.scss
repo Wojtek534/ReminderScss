@@ -1,0 +1,80 @@
+.wrapper {
+    position: relative;
+    height: 50px;
+}
+
+.wrapper input {
+    padding-left: 30px;
+    height: inherit;
+}
+
+.wrapper::before {
+    font-family: FontAwesome;
+    content: "\f002";
+    position: absolute;
+    margin-left: 5px;
+    z-index: 2;
+    color: $primary-color; //border-right: 2px solid $main-color;
+}
+
+.Filters_Wrapper {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid $border-color;
+    //box-shadow: 1px 1px 0px $border-color;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+// .Filters_Wrapper {
+//     div[class*="ThemeGrid_Width"] {
+//         vertical-align: middle;
+//     }
+//     .Search_Wrapper div[class*="ThemeGrid_Width"] {
+//       vertical-align: middle;
+//   }
+// }
+
+.Search_wrapper input[type="text"] {
+    background-color: #fff;
+    border: 1px solid $border-color; //box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    box-shadow: 1px 1px 1px $border-color;
+    border-radius: $border-radius;
+    margin-top: 6px;
+    height: 35px;
+}
+
+.Search_wrapper .select2-container {
+    height: 35px;
+    margin-top: 6px;
+    border-radius: $border-radius;
+}
+
+.Filters_Wrapper .select2-container {
+    border-radius: $border-radius;
+}
+
+.Filters_Wrapper .select2-container--default .select2-selection--single {
+    height: 35px;
+}
+
+.Filters_Wrapper input[type="text"] {
+    background-color: #fff;
+    border: 1px solid $border-color;
+    box-shadow: inset 0 0px 2px $border-color;
+    border-radius: $border-radius;
+    margin-top: 6px;
+}
+
+.Filters_Wrapper input[type="text"],
+.Filters_Wrapper .Search_wrapper input[type="text"] {
+    height: 35px;
+    max-height: 35px;
+    margin: 0px;
+}
+
+.Filters_Wrapper .Btn {
+    height: 35px;
+    max-height: 35px;
+    margin: 6px; // padding 5px + border 1px
+}

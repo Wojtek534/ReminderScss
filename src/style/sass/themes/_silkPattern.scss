@@ -1,0 +1,5068 @@
+@mixin SilkPattern {
+    /*
+silkLisbonTheme > silkLisborn > silkPattern
+
+    File: Patterns_SilkUI
+
+    0. Resets
+    1. General Properties
+    2. Text formating
+    3. Forms
+    4. Built-in widgets
+    5. Validation
+    6.1. Patterns > Content
+    6.2. Patterns > Controls
+    6.3. Patterns > Data
+    6.4. Patterns > Development
+    6.5. Patterns > Email
+    6.6. Patterns > Layout
+    6.7. Patterns > Mobile
+    6.8. Patterns > Navigation
+    6.9. Patterns > Responsive
+    6.10. Patterns > Structure
+    6.11. Patterns > Utilities
+    7. Usefull Classes
+    8. RichWidgets
+    9. Responsive Classes
+    10. Additional Classes
+/*
+
+/*------------------------------------*\
+      $0. Resets
+\*-------------------------------------*/
+    @-ms-viewport {
+        width: device-width;
+    }
+    @viewport {
+        width: device-width;
+    }
+    html,
+    body,
+    div,
+    span,
+    a,
+    img,
+    ul,
+    li,
+    form,
+    table,
+    tbody,
+    thead,
+    tr,
+    th,
+    td {
+        border: 0;
+        -moz-box-sizing: border-box;
+        /*   Add this rule for old Firefox   */
+        box-sizing: border-box;
+        font-size: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    html,
+    body,
+    a,
+    select,
+    fieldset,
+    input,
+    button,
+    select,
+    textarea,
+    optgroup,
+    option {
+        font-family: Arial, Helvetica, Meiryo, sans-serif;
+    }
+    .startHidden {
+        display: none;
+        -servicestudio-display: block;
+    }
+    .startHidden * {
+        -webkit-transition: none !important;
+        transition: none !important;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        empty-cells: show;
+    }
+    table[cellSpacing] {
+        border-collapse: separate;
+    }
+    td,
+    textarea,
+    img {
+        vertical-align: top;
+    }
+    img {
+        border-width: 0;
+    }
+    th {
+        text-align: left;
+    }
+    *:focus {
+        outline: none;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    .ListRecords>ul {
+        padding-left: 40px;
+    }
+    input::-moz-focus-inner {
+        border: 0;
+    }
+    /*------------------------------------*\
+    $1. General Properties
+\*-------------------------------------*/
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+    body {
+        color: #151515;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+    }
+    a,
+    a:link,
+    a:visited {
+        color: #125f90;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    a[disabled="disabled"],
+    a[disabled="disabled"]:hover {
+        color: #ccc;
+        text-decoration: none;
+    }
+    div[onclick] {
+        cursor: pointer;
+    }
+    /*------------------------------------*\
+    $2. Text formating
+\*-------------------------------------*/
+    .Text_NoWrap {
+        white-space: nowrap;
+    }
+    .Text_overflow {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .Text_left {
+        text-align: left;
+    }
+    .Text_center {
+        text-align: center;
+    }
+    .Text_right {
+        text-align: right;
+    }
+    .Text_justify {
+        text-align: justify;
+    }
+    .Text_AlignBaseline {
+        /* Empty class that needs to be applied to text to align it with inputs and buttons in Google Chrome
+(create spans that reset vertical-align to baseline)*/
+    }
+    /*------------------------------------*\
+    $3. Forms
+\*-------------------------------------*/
+    textarea,
+    select,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    .Form input.ReadOnly,
+    .Form textarea.ReadOnly,
+    .Form select.ReadOnly {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+    /* Overide System Styles */
+    .Page.ios textarea,
+    .Page.ios select,
+    .Page.ios input[type="text"],
+    .Page.ios input[type="password"],
+    .Page.ios input[type="month"],
+    .Page.ios input[type="time"],
+    .Page.ios input[type="week"],
+    .Page.ios input[type="number"],
+    .Page.ios input[type="email"],
+    .Page.ios input[type="url"],
+    .Page.ios input[type="search"],
+    .Page.ios input[type="tel"],
+    .Page.ios input[type="color"] {
+        -webkit-appearance: none;
+    }
+    .Page.ios input[type="datetime"],
+    .Page.ios input[type="datetime-local"],
+    .Page.ios input[type="date"],
+    .Page.android input[type="datetime"],
+    .Page.android input[type="datetime-local"],
+    .Page.android input[type="date"] {
+        padding-top: 10px;
+        -webkit-appearance: none;
+    }
+    /* resposive tablet and phone **************************/
+    .tablet input[type="text"],
+    .phone input[type="text"],
+    .tablet input[type="password"],
+    .phone input[type="password"],
+    .tablet input[type="datetime"],
+    .phone input[type="datetime"],
+    .tablet input[type="datetime-local"],
+    .phone input[type="datetime-local"],
+    .tablet input[type="date"],
+    .phone input[type="date"],
+    .tablet input[type="month"],
+    .phone input[type="month"],
+    .tablet input[type="time"],
+    .phone input[type="time"],
+    .tablet input[type="week"],
+    .phone input[type="week"],
+    .tablet input[type="number"],
+    .phone input[type="number"],
+    .tablet input[type="email"],
+    .phone input[type="email"],
+    .tablet input[type="url"],
+    .phone input[type="url"],
+    .tablet input[type="search"],
+    .phone input[type="search"],
+    .tablet input[type="tel"],
+    .phone input[type="tel"],
+    .tablet input[type="color"],
+    .phone input[type="color"],
+    .tablet select,
+    .phone select {
+        height: 38px;
+    }
+    .tablet select,
+    .phone select {
+        line-height: 28px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+        height: 32px;
+        padding: 0 12px;
+    }
+    /* INPUT STYPE SEARCH */
+    input[type=search] {
+        padding: 0 !important;
+        padding-left: 12px !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    input[type=search]::-webkit-search-decoration {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    select {
+        height: 32px;
+        line-height: 30px;
+        padding: 0 8px;
+    }
+    textarea {
+        padding: 10px 12px;
+    }
+    input,
+    textarea {
+        margin: 0;
+    }
+    input[type=radio],
+    input[type=checkbox] {
+        margin-right: 5px;
+        padding: 0;
+    }
+    input[type=file] {
+        vertical-align: bottom;
+    }
+    /* Inputs, selects, textareas, radio buttons and checkboxes generic styling */
+    .Form input.ReadOnly:not(.Not_Valid),
+    .Form textarea.ReadOnly:not(.Not_Valid),
+    .Form select.ReadOnly:not(.Not_Valid) {
+        background-color: #fff;
+        border-color: #ccc;
+    }
+    .Form textarea.ReadOnly[readonly="readonly"],
+    .Form input.ReadOnly[readonly="readonly"],
+    textarea[readonly="readonly"],
+    input[readonly="readonly"] {
+        cursor: text;
+    }
+    .Form textarea.ReadOnly[disabled="disabled"],
+    .Form select.ReadOnly[disabled="disabled"],
+    .Form input.ReadOnly[disabled="disabled"],
+    textarea[disabled="disabled"],
+    select[disabled="disabled"],
+    input[disabled="disabled"] {
+        background-color: #f5f5f5;
+        background-image: none;
+        color: #999;
+        cursor: not-allowed;
+    }
+    .Form input[readonly="readonly"].ReadOnly:not(.Not_Valid):focus,
+    .Form input[disabled="disabled"].ReadOnly:not(.Not_Valid):focus,
+    .Form select[readonly="readonly"].ReadOnly:not(.Not_Valid):focus,
+    .Form select[disabled="disabled"].ReadOnly:not(.Not_Valid):focus {
+        border: 1px solid #ccc;
+    }
+    .ie a.SmartInput_Undo,
+    .ie .Form a.SmartInput_Undo,
+    .ie .Form select.SmartInput_Changed.ReadOnly+a.SmartInput_Undo,
+    .Form select.SmartInput_Changed.ReadOnly+a.SmartInput_Undo,
+    .Form:not(.WithTouchEvents) input.ReadOnly:hover:not(.SmartInput_Changed)+.SmartInput_Undo+.FormEditPencil,
+    .Form:not(.WithTouchEvents) textarea.ReadOnly:hover:not(.SmartInput_Changed)+.SmartInput_Undo+.FormEditPencil,
+    .Form:not(.WithTouchEvents) select.ReadOnly:hover:not(.SmartInput_Changed)+.SmartInput_Undo+.FormEditPencil {
+        display: none;
+    }
+    /* Checkbox / Radio Button When Invalid */
+    .Form input[type="checkbox"].Not_Valid,
+    .Form input[type="radio"].Not_Valid,
+    input[type="checkbox"].Not_Valid,
+    input[type="radio"].Not_Valid {
+        border: transparent;
+        padding: 0;
+    }
+    input[type="checkbox"].Not_Valid:before,
+    input[type="radio"].Not_Valid:before {
+        border-color: #bf1601;
+    }
+    /* Checkboxes **************************/
+    input[type="checkbox"] {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        display: inline-block;
+        height: 20px;
+        position: relative;
+        width: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    .Form input[type="checkbox"] {
+        border-width: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    input[type="checkbox"],
+    input[type="checkbox"].ReadOnly,
+    .Form input[type="checkbox"].ReadOnly {
+        background-color: transparent;
+        vertical-align: initial;
+    }
+    .Form input[type="radio"].SmartInput {
+        display: block;
+    }
+    input[type="checkbox"]:before {
+        background: #fff;
+        border-color: #ccc;
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: inset 0 0 5px #ccc;
+        content: " ";
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    input[type="checkbox"]:checked:after {
+        opacity: 1;
+    }
+    input[type="checkbox"]:after {
+        border: 2px solid #111;
+        border-right: 0;
+        border-top: 0;
+        content: " ";
+        display: block;
+        height: 6px;
+        left: 20%;
+        opacity: 0;
+        position: absolute;
+        top: 20%;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        width: 12px;
+    }
+    /* Disabled **************************/
+    input[type="checkbox"]:disabled:checked:after {
+        border-color: #ccc;
+    }
+    input[type="checkbox"]:disabled:before {
+        box-shadow: inset 0 0 5px #ccc;
+    }
+    /* Radio Buttons **************************/
+    input[type="radio"] {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        display: inline-block;
+        height: 20px;
+        position: relative;
+        width: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    input[type="radio"]:before {
+        background: #fff;
+        border-color: #ccc;
+        border-radius: 20px;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: inset 0 0 5px #ccc;
+        content: " ";
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    input[type="radio"]:checked:after {
+        opacity: 1;
+    }
+    input[type="radio"]:after {
+        background: #111;
+        border: 2px solid #111;
+        border-radius: 8px;
+        content: " ";
+        display: table;
+        height: 8px;
+        left: 25%;
+        opacity: 0;
+        position: absolute;
+        top: 25%;
+        width: 8px;
+    }
+    .Form input[type="radio"] {
+        border-width: 0;
+    }
+    input[type="radio"],
+    input[type="radio"].ReadOnly,
+    .Form input[type="radio"].ReadOnly {
+        background-color: transparent;
+        vertical-align: initial;
+    }
+    .Form input[type="checkbox"].SmartInput {
+        display: inline-block;
+    }
+    /* Disabled **************************/
+    input[type="radio"]:disabled:checked:after {
+        background: #ccc;
+        border-color: #ccc;
+    }
+    input[type="radio"]:disabled:before {
+        box-shadow: inset 0 0 5px #ccc;
+    }
+    input[type="radio"]:disabled,
+    input[type=checkbox]:disabled {
+        cursor: not-allowed;
+    }
+    .Form input[type="checkbox"]:disabled.ReadOnly,
+    .Form input[type="radio"]:disabled.ReadOnly {
+        cursor: not-allowed;
+    }
+    /* Select */
+    .Form select.ReadOnly,
+    select {
+        background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+        background-position: right center;
+        background-repeat: no-repeat;
+        padding-right: 0;
+        text-indent: .01px;
+        text-overflow: "";
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    select[disabled="disabled"],
+    .Form select.ReadOnly[disabled="disabled"] {
+        background-image: url(/WebPatterns/img/arrowDeselected.png);
+    }
+    /* IE */
+    .ie .Form select,
+    .ie .Form select.ReadOnly {
+        padding-right: 6px;
+    }
+    select[multiple="multiple"] {
+        background-image: none;
+        padding: 0;
+    }
+    .ios select {
+        line-height: 30px;
+    }
+    .ios.tablet select {
+        line-height: 20px;
+    }
+    select::-ms-expand {
+        display: none;
+    }
+    #element {
+        color: green;
+    }
+    textarea {
+        overflow: auto;
+    }
+    input[type="submit"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    .Search_wrapper {
+        font-family: FontAwesome;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        position: relative;
+    }
+    .Search_wrapper:after {
+        color: #ccc;
+        content: "\f002";
+        font-size: 14px;
+        left: 15px;
+        position: absolute;
+        top: 11px;
+    }
+    .Search_wrapper input[type="text"] {
+        border-color: #ccc;
+        border-radius: 25px;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: inset 0 5px 10px 0 rgba(0, 0, 0, .1);
+        height: 35px;
+        line-height: 34px;
+        padding-left: 35px;
+    }
+    .SearchNavigation_frame {
+        background-color: #7fb809;
+        filter: alpha(opacity=0);
+        left: 0;
+        opacity: 0;
+        padding: 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        -webkit-transform: translate3d(0, -60px, 0);
+        -ms-transform: translate3d(0, -60px, 0);
+        transform: translate3d(0, -60px, 0);
+        z-index: 1;
+    }
+    @-webkit-keyframes openSearch {
+        0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, 41px, 0);
+        }
+        50% {
+            opacity: .8;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-ms-keyframes openSearch {
+        0% {
+            opacity: 0;
+            -ms-transform: translate3d(0, 41px, 0);
+        }
+        50% {
+            opacity: .8;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes openSearch {
+        0% {
+            filter: alpha(opacity=0);
+            opacity: 0;
+            transform: translate3d(0, 41px, 0);
+        }
+        50% {
+            filter: alpha(opacity=80);
+            opacity: .8;
+        }
+        100% {
+            filter: alpha(opacity=100);
+            opacity: 1;
+        }
+    }
+    .IconTrigger.js_open .fa {
+        color: #fff;
+    }
+    .js_open+.SearchNavigation_frame {
+        -webkit-animation: openSearch .4s;
+        animation: openSearch .4s;
+        filter: alpha(opacity=100);
+        opacity: 1;
+        -webkit-transform: translate3d(0, 41px, 0);
+        -ms-transform: translate3d(0, 41px, 0);
+        transform: translate3d(0, 41px, 0);
+    }
+    .SearchNavigation_frame .Search_wrapper input[type="text"] {
+        border-color: rgba(0, 0, 0, .3);
+        border-style: solid;
+        border-width: 1px;
+        color: #ccc;
+        height: 40px;
+        padding-left: 35px;
+    }
+    .SearchNavigation_frame .Search_wrapper:after {
+        top: 14px;
+    }
+    /* exception on phone, set form 100% **************************/
+    html .phone .Form.ThemeGrid_Width6,
+    html .tablet.portrait .Form.ThemeGrid_Width6 {
+        width: 100%;
+    }
+    /*------------------------------------*\
+    $4. Buit-in widgets
+\*-------------------------------------*/
+    .Filters_Wrapper {
+        background: rgb(230, 230, 230);
+        border-radius: 2px;
+        line-height: 34px;
+        padding: 10px;
+    }
+    table.EditRecord tr td,
+    table.ShowRecord tr td {
+        padding-right: 20px;
+    }
+    .EditRecord {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .EditRecord_Caption {
+        color: #666;
+        padding: 7px 10px 0 0;
+        vertical-align: top;
+    }
+    .EditRecord_Value {
+        line-height: 22px;
+        padding: 5px 0;
+        vertical-align: top;
+    }
+    .EditRecord_Buttons {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        vertical-align: baseline;
+    }
+    .EditRecord_Buttons .Button {
+        padding-bottom: 8px;
+        padding-top: 8px;
+        vertical-align: baseline;
+    }
+    .ShowRecord_Caption {
+        color: #999;
+        padding: 4px 10px 4px 0;
+    }
+    .ShowRecord_Value {
+        padding: 4px 0;
+    }
+    .EditRecord .Heading2,
+    .ShowRecord .Heading2,
+    .EditRecord .Heading3,
+    .ShowRecord .Heading3 {
+        margin-bottom: 10px;
+    }
+    .TableRecords_Header {
+        border-bottom: 2px solid #c2c2c2;
+        color: #999;
+        padding: 5px 0 10px 10px;
+    }
+    .TableRecords_Header a,
+    .TableRecords_Header a:link,
+    .TableRecords_Header a:visited {
+        color: #999;
+    }
+    .desktop .TableRecords>tbody>tr:hover,
+    .desktop .TableRecords>tbody>tr:hover td,
+    .desktop .EditableTable>tbody>tr:hover td {
+        background: #fafcff;
+    }
+    .TableRecords {
+        background: #fff;
+        border-bottom: 1px solid #c2c2c2;
+        border-top: 2px solid #c2c2c2;
+        margin-top: 20px;
+        padding: 5px 0 0 0;
+    }
+    /* If is inside a Panel_content without padding **************************/
+    .Panel_content.nopadding .TableRecords {
+        border: 0;
+    }
+    .TableRecords_OddLine,
+    .TableRecords_EvenLine {
+        border-bottom: 1px solid #c2c2c2;
+        padding: 7px 0 7px 10px;
+    }
+    .desktop .TableRecords_OddLine:first-child,
+    .desktop .TableRecords_EvenLine:first-child,
+    .desktop .TableRecords_Header:first-child,
+    .tablet .TableRecords_OddLine:first-child,
+    .tablet .TableRecords_EvenLine:first-child,
+    .tablet .TableRecords_Header:first-child {
+        padding-left: 20px;
+    }
+    .TableRecords_OddLine:last-child,
+    .TableRecords_EvenLine:last-child,
+    .TableRecords_Header:last-child {
+        padding-right: 20px;
+    }
+    .TableRecords_TopNavigation {
+        padding: 5px 0;
+    }
+    .TableRecords_BottomNavigation {
+        margin-top: 15px;
+    }
+    .RecordPicture {
+        border: 1px solid #eaeaea;
+        max-width: 138px;
+    }
+    .RecordPicture_Wrapper {
+        max-width: 138px;
+    }
+    .RecordPicture_Wrapper .RecordPicture {
+        display: block;
+    }
+    .TableRecords .RecordPicture {
+        max-height: 40px;
+    }
+    /* TableRecordsResponsiveExpandable **************************/
+    .TableRecords:not(.NoResponsive) div.TableRecords_Label {
+        display: none;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive) .TableRecords_Label,
+    .phone .TableRecords:not(.NoResponsive) .TableRecords_Label {
+        color: #999;
+        display: block;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td:first-child .TableRecords_Label,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td:first-child .TableRecords_Label {
+        display: inline-block;
+        /* for master details with checkboxes*/
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td:first-child .TableRecords_Label:first-child,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td:first-child .TableRecords_Label:first-child {
+        display: none;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive),
+    .phone .TableRecords:not(.NoResponsive) {
+        padding: 0;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td.TableRecords_OddLine,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td.TableRecords_EvenLine,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td.TableRecords_OddLine,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td.TableRecords_EvenLine {
+        border-bottom: none;
+        box-sizing: border-box;
+        display: none;
+        float: left;
+        padding: 5px;
+        width: 100%;
+        -servicestudio-display: none !important;
+    }
+    /* no hidden for .ResponsiveTableRecords **************************/
+    .tablet.portrait .TableRecordsResponsive>.TableRecords td.TableRecords_OddLine,
+    .tablet.portrait .TableRecordsResponsive>.TableRecords td.TableRecords_EvenLine,
+    .phone .TableRecordsResponsive>.TableRecords td.TableRecords_OddLine,
+    .phone .TableRecordsResponsive>.TableRecords td.TableRecords_EvenLine {
+        display: block;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td.TableRecords_OddLine:first-child,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td.TableRecords_EvenLine:first-child,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td.TableRecords_OddLine:first-child,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td.TableRecords_EvenLine:first-child {
+        border-top: 1px dotted #ccc;
+        cursor: pointer;
+        display: block;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        -servicestudio-display: block !important;
+    }
+    /* no pointer for .TableRecordsResponsive **************************/
+    .tablet.portrait .TableRecordsResponsive>.TableRecords td.TableRecords_OddLine:first-child,
+    .tablet.portrait .TableRecordsResponsive>.TableRecords td.TableRecords_EvenLine:first-child,
+    .phone .TableRecordsResponsive>.TableRecords td.TableRecords_OddLine:first-child,
+    .phone .TableRecordsResponsive>.TableRecords td.TableRecords_EvenLine:first-child {
+        cursor: default;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive) tr:first-child td.TableRecords_OddLine:first-child,
+    .tablet.portrait .TableRecords:not(.NoResponsive) tr:first-child td.TableRecords_EvenLine:first-child,
+    .phone .TableRecords:not(.NoResponsive) tr:first-child td.TableRecords_OddLine:first-child,
+    .phone .TableRecords:not(.NoResponsive) tr:first-child td.TableRecords_EvenLine:first-child {
+        border: none;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>thead,
+    .phone .TableRecords:not(.NoResponsive)>thead {
+        display: none;
+        -servicestudio-display: none !important;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td *,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td * {
+        text-align: left;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Post .Post_icon,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Post .Post_icon,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Post .Post_icon .fa-fw,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Post .Post_icon .fa-fw,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .UserInitials,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .UserInitials,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Progress span,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Progress span,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Counter .Counter_number,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Counter .Counter_number,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Counter .Counter_label,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Counter .Counter_label,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIcon_icon,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIcon_icon,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIcon_text,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIcon_text,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIconText_icon,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIconText_icon,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIconText_label,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIconText_label,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TilleIconText_text,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TilleIconText_text,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileNumber_number,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileNumber_number,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileNumber_text,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileNumber_text,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .WizardParent .WizardStep div,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .WizardParent .WizardStep div,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .WizardParent .WizardStep a,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .WizardParent .WizardStep a,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tabs .Tabs__tab,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Tabs .Tabs__tab,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Blank_row>div,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Blank_row>div,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Blank_wrapper>div,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Blank_wrapper>div {
+        text-align: center;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Panel .Panel__actions,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Panel .Panel__actions,
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Buttons .Buttons_Right,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td .Buttons .Buttons_Right {
+        text-align: right;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td.TableRecords_OddLine,
+    .tablet.portrait .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td.TableRecords_EvenLine,
+    .phone .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td.TableRecords_OddLine,
+    .phone .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td.TableRecords_EvenLine {
+        display: block;
+        -servicestudio-display: block !important;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td:first-child:before,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td:first-child:before {
+        color: #aaa;
+        content: "\f0dd";
+        float: right;
+        font-family: FontAwesome;
+        margin-right: 5px;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td:last-child:before,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td:last-child:before {
+        content: "";
+        /* hide the icon there is only one column (first and last child are the same) */
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td[colspan]:first-child:before,
+    .phone .TableRecords:not(.NoResponsive)>*>*>td[colspan]:first-child:before {
+        content: "";
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td:first-child:before,
+    .phone .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td:first-child:before {
+        content: "\f0de";
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td:last-child:before,
+    .phone .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td:last-child:before {
+        content: "";
+        /* hide the icon there is only one column (first and last child are the same) */
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive).Expanded td.TableRecords_OddLine,
+    .tablet.portrait .TableRecords:not(.NoResponsive).Expanded td.TableRecords_EvenLine,
+    .phone .TableRecords:not(.NoResponsive).Expanded td.TableRecords_OddLine,
+    .phone .TableRecords:not(.NoResponsive).Expanded td.TableRecords_EvenLine {
+        display: table-cell;
+        -servicestudio-display: table-cell !important;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive).Expanded td:first-child:before,
+    .phone .TableRecords:not(.NoResponsive).Expanded td:first-child:before {
+        display: none;
+        -servicestudio-display: none !important;
+    }
+    .tablet.portrait .TableRecords:not(.NoResponsive).Expanded td:first-child .TableRecords_Label:first-child,
+    .phone .TableRecords:not(.NoResponsive).Expanded td:first-child .TableRecords_Label:first-child {
+        display: table-cell;
+    }
+    /* - EditableTable NoResponsive - */
+    .Page.tablet .EditableTable.NoResponsive thead,
+    .Page.phone .EditableTable.NoResponsive thead {
+        display: table-header-group;
+    }
+    .Page.tablet .EditableTable.NoResponsive tbody tr:not(.RowControlGroup):not(.OnEdit) td:first-child:before,
+    .Page.phone .EditableTable.NoResponsive tbody tr:not(.RowControlGroup):not(.OnEdit) td:first-child:before,
+    body .Page.tablet .EditableTable.NoResponsive>tbody>tr:last-child,
+    body .Page.phone .EditableTable.NoResponsive>tbody>tr:last-child,
+    .Page.tablet .EditableTable.NoResponsive tr.Selected div.ColumnHeader,
+    .Page.phone .EditableTable.NoResponsive tr.OnEdit div.ColumnHeader {
+        display: none;
+    }
+    .Page.tablet .EditableTable.NoResponsive tbody tr:not(.RowControlGroup):not(.Selected) td:first-child,
+    .Page.phone .EditableTable.NoResponsive tbody tr:not(.RowControlGroup):not(.Selected) td:first-child {
+        border-bottom: 1px solid #ddd;
+    }
+    .Page.tablet .EditableTable.NoResponsive tr.Selected td,
+    .Page.phone .EditableTable.NoResponsive tr.Selected td,
+    .Page.tablet .EditableTable.NoResponsive .EditableTable tbody td,
+    .Page.phone .EditableTable.NoResponsive .EditableTable tbody td,
+    .Page.tablet .EditableTable.NoResponsive tbody td,
+    .Page.phone .EditableTable.NoResponsive tbody td {
+        display: table-cell;
+    }
+    .Page.tablet .EditableTable.NoResponsive tr,
+    .Page.phone .EditableTable.NoResponsive tr {
+        display: table-row;
+    }
+    .Page.tablet .EditableTable.NoResponsive tr td:first-child,
+    .Page.phone .EditableTable.NoResponsive tr td:first-child {
+        display: table-cell;
+    }
+    /*------------------------------------*\
+    $5. Validation
+\*-------------------------------------*/
+    .InputMandatorySymbol {
+        display: none;
+        /* No "*" after input */
+    }
+    .MandatoryCaption:after {
+        color: #bf1601;
+        content: "*";
+        font-size: 12px;
+        font-weight: normal;
+        padding: 0 5px 5px 3px;
+        position: absolute;
+    }
+    .Prompt {
+        color: #bbb;
+    }
+    .Form input.Not_Valid,
+    .Form textarea.Not_Valid,
+    .Form select.Not_Valid,
+    input.Not_Valid,
+    textarea.Not_Valid,
+    select.Not_Valid {
+        border: 1px solid #bf1601;
+        border-radius: 0;
+    }
+    .Form textarea.Not_Valid:focus,
+    .Form textarea.Not_Valid,
+    textarea.Not_Valid:focus,
+    textarea.Not_Valid,
+    input.Not_Valid {
+        padding: 10px 12px;
+    }
+    .ValidationMessage {
+        color: #bf1601;
+        display: block;
+        font-size: 11px;
+    }
+    input[type="text"].Not_Valid,
+    input[type="password"].Not_Valid,
+    input[type="datetime"].Not_Valid,
+    input[type="datetime-local"].Not_Valid,
+    input[type="date"].Not_Valid,
+    input[type="month"].Not_Valid,
+    input[type="time"].Not_Valid,
+    input[type="week"].Not_Valid,
+    input[type="number"].Not_Valid,
+    input[type="email"].Not_Valid,
+    input[type="url"].Not_Valid,
+    input[type="search"].Not_Valid,
+    input[type="tel"].Not_Valid,
+    input[type="color"].Not_Valid {
+        border: 1px solid #bf1601;
+        padding: 0 12px;
+    }
+    .select2-container.Not_Valid .select2-choice {
+        border: 1px solid #bf1601;
+    }
+    input[type="text"].Not_Valid:focus,
+    input[type="password"].Not_Valid:focus,
+    input[type="datetime"].Not_Valid:focus,
+    input[type="datetime-local"].Not_Valid:focus,
+    input[type="date"].Not_Valid:focus,
+    input[type="month"].Not_Valid:focus,
+    input[type="time"].Not_Valid:focus,
+    input[type="week"].Not_Valid:focus,
+    input[type="number"].Not_Valid:focus,
+    input[type="email"].Not_Valid:focus,
+    input[type="url"].Not_Valid:focus,
+    input[type="search"].Not_Valid:focus,
+    input[type="tel"].Not_Valid:focus,
+    input[type="color"].Not_Valid:focus {
+        border: 1px solid #bf1601;
+    }
+    /*------------------------------------*\
+    $6.1 Patterns > Content
+\*------------------------------------*/
+    /* AccordionVertical **************************/
+    .AccordionVertical {
+        border: 1px solid #ddd;
+    }
+    /* Inside no padding elements like Panel */
+    .nopadding .AccordionVertical {
+        border: none;
+    }
+    .AccordionVertical_item {
+        border-top: 1px solid #ddd;
+    }
+    .AccordionVertical_item:first-child {
+        border-top: 0;
+    }
+    .AccordionVertical_item.open>.AccordionVertical__header {
+        font-weight: 600;
+    }
+    .AccordionVertical__header:hover {
+        cursor: pointer;
+    }
+    .AccordionVertical__header {
+        display: table;
+        padding: 12px 14px;
+        width: 100%;
+    }
+    .AccordionVertical___title {
+        color: #253b4a;
+        display: table-cell;
+        font-size: 14px;
+        line-height: 22px;
+        width: 100%;
+    }
+    .AccordionVertical___title>div {
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .AccordionVertical___icon {
+        border-left: 1px solid #ccc;
+        display: table-cell;
+        padding-left: 10px;
+        vertical-align: middle;
+        -servicestudio-width: 30px;
+    }
+    .AccordionVertical___icon>.fa {
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-radius: 22px;
+        color: #999;
+        font-size: 20px;
+        height: 22px;
+        width: 22px;
+    }
+    .AccordionVertical_item.open>.AccordionVertical__header>.AccordionVertical___icon>.fa {
+        background-color: transparent;
+        border: 1px solid #666;
+        border-radius: 22px;
+        color: #666;
+        height: 22px;
+        -webkit-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+        width: 22px;
+    }
+    .AccordionVertical__content {
+        border-color: #ddd;
+        box-sizing: content-box;
+        display: block;
+        height: 0;
+        overflow: hidden;
+        padding: 0 17px;
+        -webkit-transition: height .5s ease, padding .5s ease;
+        transition: height .5s ease, padding .5s ease;
+        visibility: visible;
+        -servicestudio-height: auto;
+    }
+    .AccordionVertical_item.open>.AccordionVertical__content {
+        border-top: 1px solid #ddd;
+        height: auto;
+        padding: 17px;
+        visibility: visible;
+    }
+    .AccordionVertical_item.autoheight>.AccordionVertical__content {
+        height: auto !important;
+        overflow: visible;
+        padding: 17px;
+        -webkit-transition: 0;
+        transition: 0;
+    }
+    /* Rules when accordion item is envolved by span */
+    .AccordionVertical span:not(:first-child) .AccordionVertical_item {
+        border-top: 1px solid #ddd;
+    }
+    /* Alert **************************/
+    .Alert {
+        border: 1px solid #ccc;
+        color: #fff;
+        margin-bottom: 20px;
+        padding: 10px 10px 10px 35px;
+        position: relative;
+        width: 100%;
+        -servicestudio-background-color: #999;
+    }
+    .Alert span.fa {
+        font-size: 16px;
+        left: 10px;
+        position: absolute;
+        top: 12px;
+    }
+    .Alert.Info {
+        background-color: #62b6d1;
+        border-color: #009bd0;
+    }
+    .Alert.Success {
+        background-color: #a9c264;
+        border-color: #97ae58;
+    }
+    .Alert.Error {
+        background-color: #e09d90;
+        border-color: #d87c69;
+    }
+    .Alert.Warning {
+        background-color: #f5c459;
+        border-color: #c78e10;
+    }
+    /* Balloon **************************/
+    @-webkit-keyframes balloon {
+        0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -5px, 0);
+        }
+        50% {
+            opacity: .8;
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+    }
+    @-ms-keyframes balloon {
+        0% {
+            opacity: 0;
+            -ms-transform: translate3d(0, -5px, 0);
+        }
+        50% {
+            opacity: .8;
+        }
+        100% {
+            opacity: 1;
+            -ms-transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes balloon {
+        0% {
+            filter: alpha(opacity=0);
+            opacity: 0;
+            transform: translade3d(0, -5px, 0);
+        }
+        50% {
+            filter: alpha(opacity=80);
+            opacity: .8;
+        }
+        100% {
+            filter: alpha(opacity=100);
+            opacity: 1;
+            transform: translade3d(0, 0, 0);
+        }
+    }
+    .Balloon {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        line-height: 20px;
+        -servicestudio-display: table !important;
+        -servicestudio-opacity: 1 !important;
+        -servicestudio-position: relative !important;
+        -servicestudio-z-index: 1 !important;
+    }
+    .Balloon_content {
+        padding: 8px 10px;
+        -servicestudio-background-color: #fff;
+        -servicestudio-border: 1px solid #ccc;
+        -servicestudio-display: table !important;
+        -servicestudio-min-height: 35px;
+        -servicestudio-min-width: 100px;
+        -servicestudio-opacity: 1 !important;
+        -servicestudio-z-index: 1 !important;
+    }
+    .Balloon_footer {
+        border-top: 1px solid #ccc;
+        padding: 10px;
+        -servicestudio-background-color: #fff;
+        -servicestudio-border: 1px solid #ccc;
+        -servicestudio-border-top: 0;
+    }
+    .Balloon__heading.Heading3 {
+        display: table-cell;
+        text-align: left;
+        vertical-align: middle;
+    }
+    .js_open.Balloon {
+        -webkit-animation: balloon .2s ease-in;
+        animation: balloon .2s ease-in;
+        display: block;
+        filter: alpha(opacity=100);
+        opacity: 1;
+        z-index: 15;
+    }
+    /* BlankSlate **************************/
+    .Blank {
+        border: 1px solid #d0d0d0;
+        border-radius: 4px;
+        display: table;
+        height: 200px;
+        padding-bottom: 10px;
+        width: 100%;
+    }
+    .Blank.FullHeight {
+        height: 100%;
+        min-height: 200px;
+    }
+    .Blank_row {
+        display: table-row;
+    }
+    .Blank_wrapper {
+        display: table-cell;
+        text-align: center;
+        vertical-align: top;
+    }
+    .Blank_icon {
+        color: #d0d0d0;
+        display: table-cell;
+        font-size: 80px;
+        text-align: center;
+        vertical-align: bottom;
+    }
+    .Blank_desc {
+        margin-top: 10px;
+    }
+    .Blank_action {
+        margin-top: 20px;
+    }
+    .Blank_action .Button {
+        margin-left: 0;
+    }
+    .Blank .fa-fw {
+        width: auto;
+    }
+    /* Box **************************/
+    .Box {
+        background-color: #e4e4e4;
+        margin: 20px 0;
+        padding: 20px;
+    }
+    .phone .Box {
+        padding: 10px;
+    }
+    .Section .Box {
+        margin: 20px 0;
+        padding: 10px;
+    }
+    .Box:first-child {
+        margin-top: 0;
+    }
+    .Box .Columns:last-child .Column {
+        margin-bottom: 0;
+    }
+    /* Bullets **************************/
+    ol.List,
+    ul.List {
+        margin-top: 10px;
+        padding-left: 26px;
+    }
+    ol.List li,
+    ul.List li {
+        padding-bottom: 10px;
+    }
+    /* ButtonsArea **************************/
+    .Buttons {}
+    .Buttons_Left {
+        display: table-cell;
+        text-align: left;
+        vertical-align: middle;
+    }
+    .Buttons_Right {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+    }
+    /* Cards **************************/
+    .Card {
+        padding: 10px;
+        width: 100%;
+    }
+    .Card .Button,
+    .Card a.Button {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .Card .Card_Title.Heading3 {
+        margin-bottom: 10px;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .CardSimple .Card_Text {
+        margin-bottom: 10px;
+        margin-top: 0;
+        padding-top: 0;
+        -servicestudio-min-height: 50px;
+    }
+    .CardSimpleImage .Card_Image {
+        margin-bottom: 10px;
+        margin-top: 0;
+        padding-top: 0;
+        -servicestudio-min-height: 50px;
+    }
+    .CardSimpleImage .Card_Text {
+        margin-bottom: 10px;
+    }
+    .CardSimpleImage .Card_Actions .Button:last-child {
+        margin-right: 0;
+    }
+    .CardLeftImage .Left {
+        display: table-cell;
+        vertical-align: top;
+        -servicestudio-min-width: 80px;
+    }
+    .CardLeftImage .Left .Card_Image {
+        -servicestudio-min-height: 80px;
+    }
+    .CardLeftImage .Right {
+        display: table-cell;
+        padding: 10px;
+        vertical-align: top;
+        width: 100%;
+        -servicestudio-width: 100%;
+    }
+    .CardLeftImage .Right .Card_Title.Heading4 {
+        margin-bottom: 10px;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .CardBackground {
+        background-position: center center;
+        background-size: cover;
+        position: relative;
+    }
+    .CardBackground_Content {
+        word-break: break-word;
+    }
+    /* Carousel **************************/
+    .owl-theme .owl-controls {
+        margin-top: 10px;
+        text-align: center;
+    }
+    .owl-theme .owl-controls .owl-buttons div {
+        background: #aaa;
+        border-radius: 50%;
+        color: #fff;
+        display: inline-block;
+        filter: Alpha(Opacity=50);
+        /*IE7 fix*/
+        font-size: 12px;
+        height: 25px;
+        line-height: 25px;
+        margin-top: -20px;
+        opacity: .5;
+        top: 50%;
+        width: 25px;
+        *display: inline;
+        /*IE7 life-saver */
+    }
+    .owl-theme .owl-controls.clickable .owl-buttons div:hover {
+        filter: Alpha(Opacity=100);
+        /*IE7 fix*/
+        opacity: 1;
+        text-decoration: none;
+    }
+    .owl-theme .owl-controls .owl-page {
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        /*IE7 life-saver */
+    }
+    .owl-theme .owl-controls .owl-page span {
+        background: #aaa;
+        border-radius: 20px;
+        display: block;
+        filter: Alpha(Opacity=50);
+        /*IE7 fix*/
+        height: 10px;
+        margin: 10px 10px;
+        opacity: .5;
+        width: 10px;
+    }
+    .owl-theme .owl-controls .owl-page.active span,
+    .owl-theme .owl-controls.clickable .owl-page:hover span {
+        filter: Alpha(Opacity=100);
+        /*IE7 fix*/
+        opacity: 1;
+    }
+    .owl-carousel .owl-wrapper:after {
+        clear: both;
+        content: ".";
+        display: block;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+    }
+    .owl-carousel {
+        display: none;
+        position: relative;
+        width: 100%;
+        -ms-touch-action: pan-y;
+    }
+    .owl-carousel .owl-wrapper {
+        display: none;
+        position: relative;
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -ms-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+    }
+    .owl-carousel .owl-wrapper-outer {
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 100%;
+    }
+    .owl-carousel .owl-wrapper-outer.autoHeight {
+        -webkit-transition: height 500ms ease-in-out;
+        transition: height 500ms ease-in-out;
+    }
+    .owl-carousel .owl-item {
+        float: left;
+    }
+    .owl-controls .owl-page,
+    .owl-controls .owl-buttons div {
+        cursor: pointer;
+    }
+    .owl-controls {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .owl-prev.fa.fa-fw.fa-angle-left {
+        left: 10px;
+        position: absolute;
+    }
+    .owl-next.fa.fa-fw.fa-angle-right {
+        position: absolute;
+        right: 10px;
+    }
+    /* Info **************************/
+    .InfoTooltip {
+        margin: 0 10px;
+        -servicestudio-color: silver;
+    }
+    /* Modal **************************/
+    .Modal {
+        display: block;
+        z-index: 100;
+        -servicestudio-display: block;
+        -servicestudio-padding-top: 40px;
+        -servicestudio-position: relative;
+        -servicestudio-z-index: 14;
+    }
+    body.ModalOpened .Modal {
+        display: block;
+    }
+    body.ModalOpened .ModalBackground {
+        background-color: rgba(0, 0, 0, .15);
+        display: block;
+    }
+    .ModalBackground {
+        background-color: rgba(0, 0, 0, .0);
+        bottom: 0;
+        display: none;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+        z-index: 10;
+        -servicestudio-position: static;
+    }
+    .phone .ModalBackground {
+        display: none;
+    }
+    body.ModalOpened .ModalContainer {
+        display: block;
+        -webkit-transform: translateX(-50%) translateY(0) translateZ(0);
+        -ms-transform: translateX(-50%) translateY(0) translateZ(0);
+        transform: translateX(-50%) translateY(0) translateZ(0);
+    }
+    .ModalContainer {
+        background: #fff;
+        border: 1px solid #e4e4e4;
+        border: 1px solid #dddedf;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        bottom: 0;
+        box-shadow: 0 1px 5px 2px rgba(50, 50, 50, .1);
+        display: block;
+        left: 50%;
+        max-width: 800px;
+        padding: 30px 20px;
+        position: fixed;
+        text-align: center;
+        -webkit-transform: translateX(-50%) translateY(100%) translateZ(0);
+        -ms-transform: translateX(-50%) translateY(100%) translateZ(0);
+        transform: translateX(-50%) translateY(100%) translateZ(0);
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        width: 100%;
+        z-index: 11;
+        -servicestudio--webkit-transform: none;
+        -servicestudio-display: block;
+        -servicestudio-left: 0;
+        -servicestudio-margin-left: auto;
+        -servicestudio-margin-right: auto;
+        -servicestudio-position: relative;
+        -servicestudio-transform: none;
+    }
+    .ModalContainer table.EditRecord,
+    .ModalContainer table.ShowRecord {
+        border: 0;
+        text-align: left;
+    }
+    .ModalContainer.done {
+        bottom: 0;
+    }
+    .ModalContainer .Heading1 {
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+    .ModalMessage {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .ModalOpened {
+        overflow: hidden;
+    }
+    .ModalOpened .calendar,
+    .ModalOpened .calendarPattern {
+        z-index: 9999;
+    }
+    /* Responsive Context **************************/
+    .phone .ModalContainer {
+        height: 100%;
+        overflow-y: scroll;
+        z-index: 22;
+        -webkit-overflow-scrolling: touch;
+    }
+    /* Panel **************************/
+    .Panel {
+        border: 1px solid #ccc;
+        min-height: 100px;
+    }
+    .Panel_header,
+    .Panel_footer {
+        border-bottom: 1px solid #ccc;
+        display: table;
+        padding: 10px;
+        width: 100%;
+    }
+    .Panel_header>div {
+        width: 60%;
+    }
+    .Panel_header>.Panel__actions {
+        width: 100%;
+    }
+    .Panel_content {
+        padding: 10px;
+        -servicestudio-min-height: 150px;
+    }
+    .Panel_footer {
+        border-bottom: 0;
+        border-top: 1px solid #ccc;
+    }
+    .Panel__title.Heading3 {
+        display: table-cell;
+        font-style: normal;
+        text-align: left;
+        vertical-align: middle;
+    }
+    .Panel__actions {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+    }
+    /* Post **************************/
+    .Post {
+        display: table;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .Post_icon {
+        display: table-cell;
+        text-align: center;
+        vertical-align: top;
+        width: 50px;
+    }
+    .Post_content {
+        display: table-cell;
+        padding-left: 15px;
+    }
+    .Post__date {
+        float: right;
+    }
+    .Post__description {
+        margin-top: 2px;
+    }
+    /* Section **************************/
+    .Section {
+        margin: 20px 0 0;
+    }
+    .Section:first-child {
+        margin-top: 0;
+    }
+    .Section_header {
+        border-bottom: 1px solid #ccc;
+        display: table;
+        margin-top: 0;
+        min-height: 38px;
+        padding-bottom: 5px;
+        width: 100%;
+    }
+    .tablet .Section_header,
+    .phone .Section_header {
+        min-height: 44px;
+    }
+    .Section__title.Heading2 {
+        display: table-cell;
+        min-width: 100px;
+        vertical-align: middle;
+    }
+    .Section__title.Heading2 span.fa {
+        margin-right: 5px;
+    }
+    .Section__actions {
+        display: table-cell;
+        min-width: 100px;
+        text-align: right;
+        vertical-align: middle;
+    }
+    .Section__actions>* {
+        float: right;
+        margin-left: 10px;
+    }
+    .Section_content {
+        padding-top: 10px;
+    }
+    /* SectionExpandable **************************/
+    .Panel .SectionExpandable {
+        margin-top: 0;
+    }
+    .Panel_content.nopadding {
+        padding: 0;
+    }
+    .SectionExpandable_header {
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+        display: table;
+        margin-top: 0;
+        padding: 0 0 5px 0;
+        width: 100%;
+    }
+    .SectionExpandable.expanded .SectionExpandable_header {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .SectionExpandable__title.Heading2 {
+        display: table-cell;
+        min-width: 100px;
+        text-align: left;
+        vertical-align: middle;
+    }
+    .SectionExpandable__title.Heading2 span.fa {
+        margin-right: 5px;
+    }
+    .SectionExpandable__icon.Heading2 {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+        width: 16px;
+    }
+    .SectionExpandable.expanded .SectionExpandable__icon {
+        -webkit-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+    .SectionExpandable_content {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-top: none;
+        box-sizing: content-box;
+        height: 0;
+        margin-top: 0;
+        overflow: hidden;
+        padding: 0 10px;
+        -webkit-transition: all 500ms cubic-bezier(.420, .000, .580, 1.000);
+        transition: all 500ms cubic-bezier(.420, .000, .580, 1.000);
+        visibility: visible;
+        -servicestudio-height: auto;
+    }
+    .SectionExpandable.autoheight .SectionExpandable_content {
+        display: block;
+        height: auto !important;
+        -webkit-transition: 0;
+        transition: 0;
+    }
+    .SectionExpandable.expanded .SectionExpandable_content {
+        display: block;
+        height: auto;
+        overflow: visible;
+        padding: 10px;
+        visibility: visible;
+    }
+    /* Separator **************************/
+    .Separator {
+        border-bottom: 1px solid #dfdfdf;
+        margin: 10px 0;
+    }
+    .DropdownMenu .Separator {
+        margin: 0;
+    }
+    /* Tooltip **************************/
+    .tooltipstered {
+        cursor: help;
+        display: inline-block;
+    }
+    .TooltipWithCounter {
+        display: block;
+    }
+    .tooltipstered.balloon {
+        cursor: pointer;
+    }
+    .tooltip_style {
+        background-color: #2a2a2a;
+        border: 0;
+        border-radius: 0;
+        color: #fff;
+    }
+    .tooltip_style .tooltipster-content {
+        font-size: 14px;
+        line-height: 16px;
+        overflow: hidden;
+        padding: 8px 10px;
+    }
+    .tooltipster-base {
+        z-index: 15;
+    }
+    /*------------------------------------*\
+    $6.2 Patterns > Controls
+\*------------------------------------*/
+    /* ButtonGroup **************************/
+    .ButtonGroup {
+        outline: 1px solid transparent;
+        -webkit-transition: outline-color .3s ease-out;
+        transition: outline-color .3s ease-out;
+        width: 100%;
+    }
+    .ButtonGroup_button.Button {
+        background-color: #fff;
+        border-color: #dcdcdc;
+        border-radius: 0;
+        border-right-width: 0;
+        margin: 0;
+        margin-right: 0;
+    }
+    .ButtonGroup_button.Button span.fa {
+        pointer-events: none;
+    }
+    .ButtonGroup_button * {
+        color: #2a2a2a;
+    }
+    .ButtonGroup_button.active {
+        background: rgba(238, 238, 238, 1);
+        background: -moz-linear-gradient(top, rgba(238, 238, 238, 1) 0%, rgba(224, 224, 224, 1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(238, 238, 238, 1)), color-stop(100%, rgba(224, 224, 224, 1)));
+        background: -webkit-linear-gradient(top, rgba(238, 238, 238, 1) 0%, rgba(224, 224, 224, 1) 100%);
+        background: -o-linear-gradient(top, rgba(238, 238, 238, 1) 0%, rgba(224, 224, 224, 1) 100%);
+        background: -ms-linear-gradient(top, rgba(238, 238, 238, 1) 0%, rgba(224, 224, 224, 1) 100%);
+        background: linear-gradient(to bottom, rgba(238, 238, 238, 1) 0%, rgba(224, 224, 224, 1) 100%);
+        border-color: #ccc;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    }
+    .ButtonGroup_button.Button:last-child {
+        border-right-width: 1px;
+    }
+    .ButtonGroup_button input[type=radio] {
+        filter: alpha(opacity=0);
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        -servicestudio-margin-left: 0 !important;
+        -servicestudio-opacity: .6;
+        -servicestudio-z-index: 1;
+    }
+    .ButtonGroup_button.Button.disabled,
+    .ButtonGroup_button.Button.disabled:hover {
+        background-color: #f5f5f5;
+        color: #999;
+        cursor: default;
+    }
+    .Form:not(.form-top) .ButtonGroup_button {
+        padding-top: 0;
+    }
+    /* Remove Margin When use ButtonGroup on Filters_Wrapper */
+    .Filters_Wrapper .ButtonGroup_button.Button {
+        margin-left: 0;
+    }
+    /* Responsive Context **************************/
+    .phone :not(.NoResponsive)>.ButtonGroup .ButtonGroup_button.Button,
+    .phone :not(.NoResponsive)>.ButtonGroup .ButtonGroup_button a.Button {
+        border-right-width: 1px;
+        box-shadow: none;
+        text-align: center;
+    }
+    .phone :not(.NoResponsive)>.ButtonGroup .ButtonGroup_button.Button {
+        border-bottom-width: 0;
+        border-right-width: 1px;
+        width: 100%;
+    }
+    .phone :not(.NoResponsive)>.ButtonGroup .ButtonGroup_button.Button:last-child {
+        border-bottom-width: 1px;
+        width: 100%;
+    }
+    .phone .NoResponsive>.ButtonGroup.ButtonGroup2 .ButtonGroup_button.Button {
+        width: 50%;
+    }
+    .phone .NoResponsive>.ButtonGroup.ButtonGroup3 .ButtonGroup_button.Button {
+        width: 33.33%;
+    }
+    .phone .NoResponsive>.ButtonGroup.ButtonGroup4 .ButtonGroup_button.Button {
+        min-width: 60px;
+        width: 25%;
+    }
+    .phone .NoResponsive>.ButtonGroup.ButtonGroup5 .ButtonGroup_button.Button {
+        min-width: 46px;
+        width: 20%;
+    }
+    .phone .NoResponsive {
+        position: relative;
+    }
+    /* Dropdown **************************/
+    .DropdownMenu {
+        background-color: #fff;
+        border-color: #c6c6c6;
+        border-radius: 2px;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: 1px 1px 3px #c6c6c6;
+        display: none;
+        left: 0;
+        min-width: 120px;
+        position: absolute;
+        text-align: left;
+        top: 115%;
+        z-index: 15;
+        -servicestudio-position: relative;
+    }
+    .DropdownMenu .PH>a {
+        color: #125f90;
+        display: block;
+        line-height: 32px;
+        padding-left: 10px;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+    .DropdownMenu .PH>a:hover {
+        background-color: #efefef;
+        color: #499acd;
+        text-decoration: none;
+    }
+    .open>.DropdownMenu {
+        display: block;
+    }
+    .DropdownMenu.arrangeHorizontal {
+        left: auto;
+        right: 0;
+    }
+    .DropdownMenu.arrangeVertical {
+        bottom: 102%;
+        top: auto;
+    }
+    /* Dropdown: ButtonDropdown **************************/
+    .ButtonDropdown {
+        position: relative;
+    }
+    .ButtonDropdown_button.Button {
+        margin-left: 0;
+        min-width: 90px;
+        padding: 0 10px;
+    }
+    .ButtonDropdown_text {
+        -servicestudio-min-width: 50px;
+    }
+    /* Dropdown: InlineDropdown **************************/
+    .InlineDropdown {
+        position: relative;
+    }
+    .InlineDropdown_label {
+        cursor: pointer;
+        min-width: 50px;
+    }
+    .InlineDropdown+.InlineDropdown {
+        margin-left: 20px;
+    }
+    /* Dropdown: IconDropdown **************************/
+    .IconDropdown {
+        position: relative;
+    }
+    .IconDropdown_button.Button {
+        margin-left: 0;
+        min-width: 35px;
+        padding: 0 10px;
+    }
+    .IconDropdown_button.Button span.fa {
+        margin-left: 0;
+    }
+    /* InputWithIcons **************************/
+    .InputWithIcons {
+        position: relative;
+    }
+    .InputWithIcons input[type="text"],
+    .InputWithIcons input[type="password"],
+    .InputWithIcons input[type="datetime"],
+    .InputWithIcons input[type="datetime-local"],
+    .InputWithIcons input[type="date"],
+    .InputWithIcons input[type="month"],
+    .InputWithIcons input[type="time"],
+    .InputWithIcons input[type="week"],
+    .InputWithIcons input[type="number"],
+    .InputWithIcons input[type="email"],
+    .InputWithIcons input[type="url"],
+    .InputWithIcons input[type="search"],
+    .InputWithIcons input[type="tel"],
+    .InputWithIcons input[type="color"] {
+        padding-left: 48px;
+        width: 100%;
+    }
+    .InputWithIcons.Right input[type="text"],
+    .InputWithIcons.Right input[type="password"],
+    .InputWithIcons.Right input[type="datetime"],
+    .InputWithIcons.Right input[type="datetime-local"],
+    .InputWithIcons.Right input[type="date"],
+    .InputWithIcons.Right input[type="month"],
+    .InputWithIcons.Right input[type="time"],
+    .InputWithIcons.Right input[type="week"],
+    .InputWithIcons.Right input[type="number"],
+    .InputWithIcons.Right input[type="email"],
+    .InputWithIcons.Right input[type="url"],
+    .InputWithIcons.Right input[type="search"],
+    .InputWithIcons.Right input[type="tel"],
+    .InputWithIcons.Right input[type="color"] {
+        padding-left: 12px;
+        padding-right: 48px;
+        width: 100%;
+    }
+    .InputWithIcons.Right .InputIcon {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        left: auto;
+        right: 1px;
+    }
+    .InputWithIcons .InputIcon {
+        background-color: #e6e6e6;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        height: 30px;
+        left: 1px;
+        line-height: 30px;
+        padding: 0 10px;
+        pointer-events: none;
+        position: absolute;
+        top: 1px;
+    }
+    .tablet .InputWithIcons .InputIcon,
+    .phone .InputWithIcons .InputIcon {
+        height: 36px;
+        line-height: 36px;
+    }
+    /* Range **************************/
+    .Slider {
+        -servicestudio-height: 30px !important;
+        -servicestudio-margin: 0 !important;
+        -servicestudio-position: relative;
+    }
+    .SliderContainer {
+        padding: 0 11px;
+    }
+    /* Range: Slider values **************************/
+    .Slider_values {
+        display: table;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .tablet .Slider_values,
+    .phone .Slider_values {
+        margin-top: 15px;
+    }
+    .Slider_minvalue {
+        display: table-cell;
+        text-align: left;
+        width: 25%;
+    }
+    .Slider_maxvalue {
+        display: table-cell;
+        text-align: right;
+        width: 25%;
+    }
+    .LabelValues {
+        height: 35px;
+        margin-top: 0;
+        -servicestudio-height: 20px;
+        -servicestudio-position: 33%;
+    }
+    .LabelValues * {
+        float: left;
+        margin-right: 5px;
+        vertical-align: bottom;
+    }
+    .LabelValues label {
+        margin-right: 10px;
+    }
+    .Slider_minvalue,
+    .Slider_maxvalue,
+    .Slider_currentvalue,
+    .Slider_currentvalue2 {
+        color: #666;
+        font-size: 12px;
+        margin-top: 2px;
+    }
+    .Page .Slider_InputNumber>input,
+    .Page .Slider_InputNumber2>input {
+        display: none;
+        -servicestudio-opacity: 1;
+    }
+    /* Range: Slider bar **************************/
+    .SliderRange {
+        background: #fafafa;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, .15);
+        display: table;
+        height: 8px;
+        position: relative;
+        text-align: left;
+        width: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -servicestudio-left: 0;
+        -servicestudio-position: absolute;
+        -servicestudio-top: 30px;
+    }
+    /* Range: Slider cursor **************************/
+    .SliderRange .ui-slider-handle {
+        background: -webkit-linear-gradient(-90deg, #fff 9%, #e0e0e0 100%);
+        background: -moz-linear-gradient(-90deg, #fff 9%, #e0e0e0 100%);
+        background: -ms-linear-gradient(-90deg, #fff 9%, #e0e0e0 100%);
+        background: -o-linear-gradient(-90deg, #fff 9%, #e0e0e0 100%);
+        background: linear-gradient(180deg, #fff 9%, #e0e0e0 100%);
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .15);
+        cursor: default;
+        cursor: pointer;
+        height: 22px;
+        margin-left: -11px;
+        position: absolute;
+        top: -9px;
+        width: 22px;
+        z-index: 2;
+        -ms-touch-action: none;
+        touch-action: none;
+    }
+    .SliderRange .ui-slider-handle:hover {
+        background: -webkit-linear-gradient(90deg, #fff 29%, #f2f2f2 100%);
+        background: -moz-linear-gradient(90deg, #fff 29%, #f2f2f2 100%);
+        background: -ms-linear-gradient(90deg, #fff 29%, #f2f2f2 100%);
+        background: -o-linear-gradient(90deg, #fff 29%, #f2f2f2 100%);
+        background: linear-gradient(0deg, #fff 29%, #f2f2f2 100%);
+    }
+    .SliderRange .ui-state-active:focus {
+        background: #fff;
+        outline-width: 0;
+    }
+    .tablet .SliderRange .ui-slider-handle,
+    .phone .SliderRange .ui-slider-handle {
+        height: 35px;
+        margin-left: -17px;
+        top: -14px;
+        width: 35px;
+    }
+    .SliderRange .ui-slider-handle:after {
+        border-left: 2px solid #ccc;
+        border-right: 2px solid #ccc;
+        content: "";
+        height: 7px;
+        left: 9px;
+        position: absolute;
+        top: 7px;
+        width: 1px;
+    }
+    .tablet .SliderRange .ui-slider-handle:after,
+    .phone .SliderRange .ui-slider-handle:after {
+        height: 18px;
+        left: 15px;
+        width: 2px;
+    }
+    .SliderRange .ui-slider-handle:before {
+        border-left: 2px solid #ccc;
+        content: "";
+        height: 7px;
+        left: 6px;
+        position: absolute;
+        top: 7px;
+        width: 1px;
+    }
+    .tablet .SliderRange .ui-slider-handle:before,
+    .phone .SliderRange .ui-slider-handle:before {
+        height: 18px;
+        left: 11px;
+    }
+    /* Range: two values range **************************/
+    .SliderRange .ui-slider-range {
+        background: #e6e6e6;
+        background-position: 0 0;
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+    .ie .SliderRange .ui-slider-range,
+    .firefox .SliderRange .ui-slider-range {
+        border: 1px solid #ccc;
+    }
+    .LabelValues>div,
+    .Slider_InputNumber,
+    .Slider_InputNumber2 {
+        -servicestudio-height: 20px;
+        -servicestudio-width: 33%;
+    }
+    .Slider_InputNumber,
+    .Slider_InputNumber2 {
+        -servicestudio-left: 33%;
+        -servicestudio-position: absolute;
+        -servicestudio-top: 0;
+    }
+    .Slider_InputNumber2 {
+        -servicestudio-left: 66%;
+    }
+    .Slider_InputNumber input,
+    .Slider_InputNumber2 input {
+        -servicestudio-height: 20px !important;
+        -servicestudio-opacity: 0;
+    }
+    /* Select2 **************************/
+    .select2-container .select2-choice {
+        background-image: none;
+    }
+    .select2-container .select2-choice {
+        background-image: none;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        height: 32px;
+        line-height: 32px;
+    }
+    .select2-container .select2-choice .select2-arrow {
+        background: #fff;
+        background-clip: padding-box;
+        border-left: 1px solid #ddd;
+        border-radius: 0 2px 2px 0;
+    }
+    .select2-container .select2-choice .select2-arrow b {
+        background: url("/WebPatterns/img/select2.png") 0 1px no-repeat;
+    }
+    .select2-dropdown-open .select2-choice .select2-arrow {
+        background: transparent;
+        border-left: none;
+    }
+    .select2-container-active .select2-choice,
+    .select2-drop-active {
+        border: 1px solid #ddd;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+        outline: none;
+    }
+    .select2-drop {
+        /*z-index: 15;*/
+        border: 1px solid #ddd;
+        border-radius: 0 0 2px 2px;
+        border-top: 0;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
+    }
+    .select2-dropdown-open .select2-choice {
+        background-color: #eee;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: 0 1px 0 #fff inset;
+    }
+    .select2-dropdown-open .select2-choice .select2-arrow {
+        background: transparent;
+        border-left: none;
+    }
+    .select2-dropdown-open .select2-choice .select2-arrow b {
+        background-position: -18px 1px;
+    }
+    .select2-drop.select2-drop-above.select2-drop-active {
+        border-top: 1px solid #ddd;
+    }
+    .select2-search input {
+        background: #fff url("/WebPatterns/img/select2.png") no-repeat 100% -22px;
+        background: url("/WebPatterns/img/select2.png") no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), color-stop(0, #fff));
+        background: url("/WebPatterns/img/select2.png") no-repeat 100% -22px, -webkit-linear-gradient(center bottom, #fff 0%, #fff 0%);
+        background: url("/WebPatterns/img/select2.png") no-repeat 100% -22px, -moz-linear-gradient(center bottom, #fff 0%, #fff 0%);
+        background: url("/WebPatterns/img/select2.png") no-repeat 100% -22px, linear-gradient(to bottom, #fff 0%, #fff 0%) 0 0;
+    }
+    /* The image is the same but we need to overwrite the original image name because of OS file renaming rules */
+    .select2-container-multi .select2-choices .select2-search-field input.select2-active,
+    .select2-more-results.select2-active,
+    .select2-search input.select2-active {
+        background-image: url("/WebPatterns/img/select2spinner.gif");
+    }
+    input.select2-offscreen,
+    input.select2-offscreen:focus {
+        font-size: 0;
+        height: 32px !important;
+        width: 100% !important;
+    }
+    select.select-hide {
+        display: block !important;
+        opacity: 0;
+        position: absolute;
+        z-index: -10;
+        pointer-events: none;
+        filter: alpha(opacity=0);
+        width: 1px;
+    }
+    .select2-container-multi.select2-container-active .select2-choices {
+        border: 1px solid #ccc;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        outline: none;
+    }
+    .select2-container-multi .select2-choices {
+        border: 1px solid #ccc;
+    }
+    .select2-container-multi .select2-choices .select2-search-field input {
+        height: 28px;
+    }
+    .tablet .select2-container-multi .select2-choices .select2-search-field input,
+    .phone .select2-container-multi .select2-choices .select2-search-field input {
+        height: 34px;
+    }
+    .select2-container-multi .select2-choices .select2-search-choice {
+        margin: 4px 0 3px 5px;
+        padding: 3px 5px 3px 16px;
+    }
+    .tablet .select2-container-multi .select2-choices .select2-search-choice,
+    .phone .select2-container-multi .select2-choices .select2-search-choice {
+        padding: 7px 5px 6px 16px;
+    }
+    .select2-search-choice-close {
+        top: 3px;
+    }
+    .tablet .select2-search-choice-close,
+    .phone .select2-search-choice-close {
+        top: 7px;
+    }
+    /* ToggleButton **************************/
+    .ToggleButton {
+        background-color: #cfcfcf;
+        border-color: #ddd;
+        border-style: solid;
+        border-width: 1px;
+        height: 30px;
+        outline: 1px solid transparent;
+        -webkit-transition: outline-color .3s ease-out;
+        transition: outline-color .3s ease-out;
+        width: 54px;
+    }
+    .ToggleButton_label {
+        color: transparent;
+        cursor: pointer;
+        display: block;
+        height: 30px;
+        position: relative;
+        transition: left .15s ease-out;
+        width: 50px;
+    }
+    .ToggleButton_label:after {
+        background-color: #fff;
+        border-color: #dcdcdc;
+        border-style: solid;
+        border-width: 1px;
+        color: #444;
+        content: "";
+        display: block;
+        height: 15px;
+        left: 5px;
+        position: absolute;
+        top: 5px;
+        transition: left .15s ease-out;
+        width: 15px;
+    }
+    .ToggleButton_label.changed:after {
+        background-color: #fff;
+        content: "";
+        display: block;
+        height: 15px;
+        left: 30px;
+        position: absolute;
+        top: 5px;
+        -webkit-transition: left .15s ease-out;
+        transition: left .15s ease-out;
+        width: 15px;
+    }
+    .ToggleButton_label input {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        -servicestudio-margin-left: 25px;
+        -servicestudio-margin-top: 6px;
+        -servicestudio-opacity: 1;
+        -servicestudio-position: relative;
+    }
+    .ToggleButton.changed {
+        background-color: #a9c264;
+        background-image: none;
+        border-color: #dcdcdc;
+        color: #444;
+    }
+    /* Calendar **************************/
+    .pika-single {
+        z-index: 1;
+        background: #fff;
+        border: 1px solid #ccc;
+        color: #333;
+        cursor: default;
+        font-size: 12px;
+        line-height: 14px;
+        min-width: 250px;
+        position: relative;
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .pika-single:before,
+    .pika-single:after {
+        content: " ";
+        display: table;
+    }
+    .pika-single:after {
+        clear: both;
+    }
+    .pika-single.is-hidden {
+        display: none;
+    }
+    .pika-lendar {
+        width: 100%;
+    }
+    .is-bound .pika-lendar {
+        max-width: 250px;
+    }
+    .pika-title {
+        position: relative;
+        text-align: center;
+        height: 50px;
+        border-bottom: 1px solid #ccc;
+    }
+    .pika-label {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: bold;
+        background-color: #fff;
+    }
+    .pika-label:first-child {
+        padding-top: 5px;
+    }
+    .pika-title select {
+        cursor: pointer;
+        position: absolute;
+        z-index: 9998;
+        margin: 0;
+        left: 0;
+        top: 5px;
+        filter: alpha(opacity=0);
+        opacity: 0;
+    }
+    .pika-prev,
+    .pika-next {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        outline: none;
+        border: 0;
+        padding: 0;
+        width: 30px;
+        height: 50px;
+        white-space: nowrap;
+        overflow: hidden;
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        color: transparent;
+        z-index: 9999;
+    }
+    .pika-prev,
+    .is-rtl .pika-next {
+        left: 30px;
+        top: 0;
+        border-right: 1px solid #ccc;
+    }
+    .pika-prev:after {
+        content: '‹';
+        position: absolute;
+        color: #333;
+        width: 100%;
+        font-size: 30px;
+        z-index: 999999;
+        left: 0;
+        top: 5px;
+        height: 50px;
+    }
+    .pika-next,
+    .is-rtl .pika-prev {
+        right: 30px;
+        top: 0;
+        border-left: 1px solid #ccc;
+    }
+    .pika-next:after {
+        content: '›';
+        position: absolute;
+        color: #333;
+        width: 100%;
+        font-size: 30px;
+        z-index: 999999;
+        left: 0;
+        top: 5px;
+        height: 50px;
+    }
+    .pika-prev.is-disabled,
+    .pika-next.is-disabled {
+        cursor: default;
+        opacity: .3;
+    }
+    .pika-select {
+        display: inline-block;
+        pointer-events: none;
+    }
+    .pika-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 0;
+        table-layout: fixed;
+    }
+    .pika-table th {
+        color: #333;
+        font-size: 12px;
+        line-height: 32px;
+        text-align: center;
+        opacity: 0.5;
+        font-weight: 400;
+        border-bottom: 1px solid #ccc;
+    }
+    .pika-button {
+        cursor: pointer;
+        display: block;
+        box-sizing: border-box;
+        outline: none;
+        border: 0;
+        margin: 0;
+        width: 100%;
+        padding: 5px;
+        color: #666;
+        font-size: 12px;
+        line-height: 22px;
+        text-align: center;
+        background-color: transparent;
+        border: 1px solid #fff;
+    }
+    .pika-week {
+        line-height: 22px;
+        padding: 5px !important;
+        opacity: 0.5;
+        border-right: 1px solid #ccc;
+    }
+    .is-today .pika-button {
+        color: #333;
+        font-weight: bold;
+    }
+    .is-selected .pika-button {
+        color: #fff;
+        font-weight: bold;
+        background: #666;
+    }
+    .is-disabled .pika-button {
+        pointer-events: none;
+        cursor: default;
+        opacity: .2 !important;
+        background-color: #f1f1f1;
+        color: #666;
+    }
+    .is-outside-current-month .pika-button {
+        opacity: .7;
+    }
+    .pika-button:hover {
+        background: #ccc;
+    }
+    .pika-time-section {
+        background-color: white;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 99999;
+    }
+    .pika-label {
+        z-index: 9998;
+    }
+    td.has-event {
+        position: relative;
+    }
+    .has-event .pika-button:after {
+        background-color: #666;
+        border-radius: 50%;
+        content: "";
+        height: 4px;
+        position: absolute;
+        width: 4px;
+        bottom: 4px;
+        left: 50%;
+        margin-left: -2px;
+    }
+    .is-selected.has-event .pika-button:after,
+    .is-selected.is-today.has-event .pika-button:after {
+        background-color: #fff;
+    }
+    .pika-lendar .Calendar-navBtn {
+        width: 30px;
+        z-index: 99999;
+    }
+    .pika-lendar .Calendar-prevYear {
+        border-right: 1px solid #ccc;
+        left: 0;
+    }
+    .pika-lendar .Calendar-nextYear {
+        border-left: 1px solid #ccc;
+        right: 0;
+        left: auto;
+    }
+    .pika-single:not(.is-bound) .Calendar-navBtn {
+        width: 80px;
+    }
+    .pika-single:not(.is-bound) .pika-prev,
+    .pika-single:not(.is-bound) .pika-next {
+        width: 80px;
+    }
+    .pika-single:not(.is-bound) .pika-next {
+        right: 80px;
+    }
+    .pika-single:not(.is-bound) .pika-prev {
+        left: 80px;
+    }
+    /* Calendar DEPRECATED **************************/
+    .Calendar-topCont {
+        z-index: 19 !important;
+    }
+    .CalendarWrapper {
+        height: auto;
+        width: 100%;
+    }
+    .Calendar {
+        background: #fff;
+        border: 1px solid #ccc;
+        color: #333;
+        cursor: default;
+        font-size: 12px;
+        line-height: 14px;
+        min-width: 250px;
+        position: relative;
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .Calendar-body {
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        line-height: 30px;
+    }
+    .Calendar table {
+        border-collapse: collapse;
+    }
+    .Calendar-dayNames table,
+    .Calendar-bodyTable {
+        width: 100%;
+    }
+    /* month title */
+    .Calendar-titleCont {
+        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+        margin: auto;
+        position: relative;
+        text-align: center;
+        width: 44%\9;
+        z-index: 9;
+    }
+    .Calendar-title>div {
+        display: inline-block;
+        display: block\9;
+        height: 50px;
+        line-height: 20px;
+        margin: auto;
+        padding-top: 5px;
+        width: 80%;
+    }
+    body>.Calendar-topCont .Calendar-title {
+        max-width: 110px;
+    }
+    /* buttons month and year */
+    .Calendar-navBtn {
+        position: absolute;
+        top: 0;
+        width: 14.4%;
+    }
+    .ShowWeekNumbers .Calendar-navBtn,
+    .ShowWeekNumbers .Calendar-prevMonth {
+        width: 12.5%;
+    }
+    .Calendar-navBtn>div {
+        color: #333;
+        cursor: pointer;
+        font-size: 30px;
+        height: 50px;
+        line-height: 42px;
+        width: 100%;
+    }
+    .Calendar-navDisabled,
+    .topBar-navDisabled .Calendar-navBtn {
+        filter: alpha(opacity=30);
+        pointer-events: none;
+        opacity: .3;
+    }
+    .Calendar-navDisabled>div,
+    .topBar-navDisabled .Calendar-navBtn>div {
+        color: #ccc !important;
+        /* ensure it's disabled */
+        cursor: default;
+    }
+    .Calendar-prevMonth {
+        border-right: 1px solid #ccc;
+        left: 14%;
+    }
+    .Calendar-nextMonth {
+        border-left: 1px solid #ccc;
+        left: 71.2%;
+    }
+    .ShowWeekNumbers .Calendar-nextMonth {
+        left: 75%;
+    }
+    .Calendar-prevYear {
+        border-right: 1px solid #ccc;
+        left: 0;
+    }
+    .Calendar-nextYear {
+        border-left: 1px solid #ccc;
+        left: 85.4%;
+    }
+    .ShowWeekNumbers .Calendar-nextYear {
+        left: 87.5%;
+    }
+    /* hidden menu select year and month */
+    .Calendar-menu {
+        filter: alpha(opacity=85);
+        height: 100%;
+        left: 0;
+        opacity: .85;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    /* Calendar days */
+    .Calendar-dayNames {
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+    }
+    .Calendar-day-disabled,
+    .Calendar-day-disabled:hover {
+        background: #f1f1f1 !important;
+        /* ensure it's disabled */
+        cursor: default !important;
+        /* ensure it's disabled */
+        filter: alpha(opacity=20) !important;
+        /* ensure it's disabled */
+        font-weight: normal !important;
+        /* ensure it's disabled */
+        opacity: .2 !important;
+        /* ensure it's disabled */
+    }
+    .Calendar-day-selected,
+    .Calendar-day-selected:hover {
+        background: #666;
+        color: #fff !important;
+    }
+    .Calendar-day-today {
+        font-weight: bold !important;
+    }
+    body>.Calendar-topCont .Calendar-day,
+    body>.Calendar-topCont .Calendar-weekNumber,
+    .Calendar-dayNames div,
+    .Calendar-bottomBar-today,
+    .triggerTime,
+    .triggerTimeBack {
+        border: 1px solid #fff;
+        color: #333;
+        height: 100%;
+        line-height: 30px;
+        position: relative;
+    }
+    /* Calendar bottom */
+    .Calendar-bottomBar-today,
+    .triggerTime,
+    .triggerTimeBack {
+        opacity: .8;
+        padding: 0 20px;
+    }
+    body .triggerTimeBack {
+        height: 30px;
+        margin: auto;
+        max-width: 170px;
+    }
+    .Calendar-day:hover,
+    .Calendar-bottomBar-today:hover,
+    .triggerTime:hover,
+    .triggerTimeBack:hover {
+        background: #ccc;
+        cursor: pointer;
+    }
+    .Calendar-bottomBar-today {
+        cursor: pointer;
+    }
+    .Calendar-bottomBar>table table {
+        margin: auto;
+    }
+    /* other months display */
+    .Calendar-day-othermonth {
+        filter: alpha(opacity=70);
+        opacity: .7;
+    }
+    .Calendar-dayNames td {
+        opacity: .5;
+        width: 14.3%;
+    }
+    .Calendar-bodyTable .Calendar-weekNumber {
+        opacity: .5;
+    }
+    .CalendarWrapper .Calendar-topCont,
+    .CalendarWrapper .Calendar,
+    .CalendarWrapper .Calendar-bodyTable {
+        height: 100%;
+        width: 100%;
+    }
+    .ShowWeek,
+    .ShowWeek~td {
+        width: 12.5% !important;
+    }
+    .ShowWeek {
+        border-right: 1px solid #ccc;
+        opacity: .5;
+    }
+    .Calendar-week>td {
+        padding: 0;
+    }
+    .Calendar-day.Calendar-day-disabled.Calendar-day-selected {
+        color: #333 !important;
+        opacity: 0.7 !important;
+    }
+    /* Calendar time */
+    .TimeContent {
+        background: #fff;
+        display: none;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
+    .Calendar-time-down,
+    .Calendar-time-up,
+    .Calendar-time-am {
+        border: 1px solid #ccc;
+        color: #333;
+        cursor: pointer;
+        display: table-cell;
+        font-size: 24px;
+        height: 50px;
+        margin: auto;
+        vertical-align: middle;
+        width: 50px;
+    }
+    .desktop .Calendar-time-down:hover,
+    .desktop .Calendar-time-up:hover,
+    .desktop .Calendar-time-am:hover {
+        color: #ccc;
+    }
+    .Calendar-time-am {
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    .Calendar-time {
+        display: inline-block;
+        font-size: 24px;
+        font-weight: bold;
+        padding-top: 50px;
+    }
+    .Calendar-time td {
+        padding: 5px;
+        text-align: center;
+        vertical-align: middle;
+        width: 60px;
+    }
+    .Calendar-time td:empty,
+    .Calendar-focusLink {
+        display: none;
+    }
+    .calTriggerOut {
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 18;
+    }
+    .ios .calTriggerOut {
+        cursor: pointer;
+    }
+    /* Styles for Disabled Buttons  */
+    .Button[disabled],
+    .Button:disabled,
+    .Button.Is_Default[disabled],
+    .Button.ButtonDefault[disabled],
+    .Button.Is_Default:disabled,
+    .Button.ButtonDefault:disabled,
+    .Button.Danger[disabled],
+    .Button.Danger:disabled,
+    .Button.Success[disabled],
+    .Button.Success:disabled {
+        background-color: #ccc;
+        border: 0;
+        box-shadow: none;
+        color: #999;
+        pointer-events: none;
+    }
+    .Button.Link[disabled],
+    .Button.Link:disabled {
+        background-color: transparent;
+        color: #999;
+    }
+    .Button.Cancel[disabled],
+    .Button.Cancel:disabled {
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-color: #ccc;
+        color: #999;
+    }
+    .desktop .Button.Is_Default[disabled]:hover,
+    .desktop .Button.Is_Default:disabled:hover,
+    .desktop .Button[disabled]:hover,
+    .desktop .Button:disabled:hover,
+    .desktop .Button.Cancel[disabled]:hover,
+    .desktop .Button.Cancel:disabled:hover,
+    .desktop .Button.Danger[disabled]:hover,
+    .desktop .Button.Danger:disabled:hover,
+    .desktop .Button.Success[disabled]:hover,
+    .desktop .Button.Success:disabled:hover {
+        background-color: #ccc;
+        border: 0;
+        box-shadow: none;
+        color: #999;
+    }
+    /*------------------------------------*\
+  $6.3 Patterns > Data
+\*------------------------------------*/
+    /* Badge **************************/
+    .Badge {
+        border-radius: 25px;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 16px;
+        margin-left: 10px;
+        min-width: 20px;
+        padding: 1px 5px;
+        position: relative;
+        text-align: center;
+    }
+    .Button .Badge {
+        top: -1p;
+    }
+    .IconBadge {
+        display: inline-block;
+        margin-top: 5px;
+        position: relative;
+    }
+    .IconBadge_number {
+        background-color: #499acd;
+        border: 2px solid #fff;
+        border-radius: 25px;
+        color: #fff;
+        font-size: 10px;
+        letter-spacing: 1px;
+        min-width: 18px;
+        padding: 1px 5px;
+        position: absolute;
+        right: -10px;
+        text-align: center;
+        text-shadow: 1px 1px #369;
+        top: -12px;
+    }
+    .IconBadge span.fa {
+        font-size: 20px;
+    }
+    /* Counter **************************/
+    .Counter {
+        text-align: center;
+    }
+    .Counter_row {
+        height: 50%;
+        position: relative;
+        width: 100%;
+    }
+    .Counter_number {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+    }
+    .Counter_label {
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .Counter.Auto {
+        height: 80px;
+    }
+    .Counter.Auto .Counter_number {
+        font-size: 24px;
+    }
+    /* Counter: Small **************************/
+    .Counter.Small {
+        height: 50px;
+    }
+    .Counter.Small .Counter_number {
+        font-size: 18px;
+    }
+    /* Counter: Medium **************************/
+    .Counter.Medium {
+        height: 80px;
+    }
+    .Counter.Medium .Counter_number {
+        font-size: 24px;
+    }
+    /* Counter: Large **************************/
+    .Counter.Large {
+        height: 160px;
+    }
+    .Counter.Large .Counter_number {
+        font-size: 42px;
+    }
+    /* ProgressBar **************************/
+    .Progress {
+        background-color: #f5f5f5;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+        height: 18px;
+        overflow: hidden;
+        text-align: left;
+        width: 100%;
+    }
+    .Progress.Small {
+        height: 8px;
+    }
+    .Progress.Medium {
+        font-size: 10px;
+        height: 16px;
+    }
+    .Progress.Large {
+        font-size: 20px;
+        height: 32px;
+    }
+    .Progress_bar {
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+        color: #fff;
+        display: table;
+        height: 100%;
+        text-align: center;
+        -webkit-transition: width .6s ease;
+        transition: width .6s ease;
+        -servicestudio-width: 50%;
+    }
+    .Progress span {
+        display: table-cell;
+        vertical-align: middle;
+        -servicestudio-line-height: 1em;
+    }
+    /* ProgressBar: Tooltipster Context **************************/
+    .tooltipster-content .Counter {
+        padding: 10px 5px;
+    }
+    .tooltipster-content .Counter_number {
+        line-height: 45px;
+    }
+    /* Tile **************************/
+    .Tile {
+        display: table;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    .firefox .Tile {
+        display: -moz-deck;
+    }
+    .Tile .Row {
+        display: table-row;
+    }
+    a .Tile {
+        text-decoration: none;
+    }
+    .Tile.Small {
+        /* Firefox */
+        display: -moz-box;
+        line-height: 20px;
+        min-height: 80px;
+        width: 100%;
+        /* Firefox needs this */
+        -moz-box-align: center;
+        -moz-box-pack: center;
+    }
+    .Tile.Medium {
+        /* Firefox */
+        display: -moz-box;
+        min-height: 180px;
+        width: 100%;
+        /* Firefox needs this */
+        -moz-box-align: center;
+    }
+    .Tile.Large {
+        /* Firefox */
+        display: -moz-box;
+        min-height: 280px;
+        width: 100%;
+        /* Firefox needs this */
+        -moz-box-align: center;
+        -moz-box-pack: center;
+    }
+    .ie .Tile.Large .TileNumber_number {
+        height: 50%;
+        vertical-align: bottom;
+    }
+    .ie .Tile.Large .TileNumber_text {
+        height: 50%;
+        vertical-align: top;
+    }
+    /* Tile: InfoTooltip **************************/
+    .Tile .InfoTooltip {
+        margin: 0;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+    /* Tile: InfoTooltip IF Small **************************/
+    .Tile.Small .InfoTooltip {
+        font-size: 10px;
+        right: 2px;
+        top: 2px;
+    }
+    /* Tile: TileIcon **************************/
+    .Tile.TileIcon {
+        padding: 10px 0 10px;
+    }
+    .TileIcon_icon {
+        display: table-cell;
+        font-size: 48px;
+        vertical-align: middle;
+    }
+    .TileIcon_text {
+        display: table-cell;
+        font-size: 16px;
+        vertical-align: middle;
+    }
+    /* TileIcon IF Small **************************/
+    .Tile.Small .TileIcon_icon {
+        font-size: 30px;
+    }
+    .Tile.Small .TileIcon_text {
+        font-size: 16px;
+    }
+    /* TileIcon IF Medium **************************/
+    .Tile.Medium .TileIcon_icon {
+        font-size: 60px;
+    }
+    .Tile.Medium .TileIcon_text {
+        font-size: 22px;
+    }
+    /* TileIcon IF Large **************************/
+    .Tile.Large .TileIcon_icon {
+        font-size: 70px;
+    }
+    .Tile.Large .TileIcon_text {
+        font-size: 28px;
+    }
+    /* Tile: TileIconText **************************/
+    .TileIconText_icon {
+        display: table-cell;
+        font-size: 60px;
+        vertical-align: middle;
+        width: 120px;
+    }
+    .TileIconText_right {
+        display: table-cell;
+        font-size: 16px;
+        padding-right: 20px;
+        vertical-align: middle;
+    }
+    /* Tile: TileIconText_icon IF Small **************************/
+    .Tile.Small .TileIconText_icon {
+        font-size: 36px;
+    }
+    .Tile.Small .TileIconText_right {
+        font-size: 16px;
+    }
+    /* Tile: TileIconText_icon IF Medium **************************/
+    .Tile.Medium .TileIconText_icon {
+        font-size: 72px;
+    }
+    .Tile.Medium .TileIconText_right {
+        font-size: 22px;
+    }
+    /* Tile: TileIconText_icon IF Large **************************/
+    .Tile.Large .TileIconText_icon {
+        font-size: 88px;
+    }
+    .Tile.Large .TileIconText_right {
+        font-size: 28px;
+    }
+    /* Tile: TileNumber **************************/
+    .TileNumber_number {
+        display: table-cell;
+        font-size: 45px;
+        font-weight: 700;
+        vertical-align: bottom;
+    }
+    .TileNumber_text {
+        display: table-cell;
+        vertical-align: top;
+    }
+    /* Tile: TileNumber IF Small **************************/
+    .Small .TileNumber_number {
+        font-size: 18px;
+    }
+    .Tile.Small .TileNumber_text {
+        font-size: 14px;
+    }
+    /* Tile: TileNumber IF Medium **************************/
+    .Tile.Medium .TileNumber_number {
+        font-size: 48px;
+    }
+    .Tile.Medium .TileNumber_text {
+        font-size: 20px;
+    }
+    /* Tile: TileNumber IF Large **************************/
+    .Tile.Large .TileNumber_number {
+        font-size: 62px;
+    }
+    .Tile.Large .TileNumber_text {
+        font-size: 20px;
+    }
+    .Tile .fa-fw {
+        width: auto;
+    }
+    /* UserInitials **************************/
+    .UserInitials,
+    .UserInitials.Small {
+        border-radius: 50%;
+        height: 22px;
+        width: 22px;
+    }
+    .UserInitials span,
+    .UserInitials.Small span {
+        font-size: 10px;
+    }
+    /* UserInitials: Medium **************************/
+    .UserInitials.Medium {
+        height: 40px;
+        width: 40px;
+    }
+    .UserInitials.Medium span {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2.6em;
+    }
+    /* UserInitials: Large **************************/
+    .UserInitials.Large {
+        height: 80px;
+        width: 80px;
+    }
+    .UserInitials.Large span {
+        font-size: 34px;
+        font-weight: bold;
+        line-height: 2.4em;
+    }
+    /*------------------------------------*\
+  $6.4 Patterns > Mobile
+\*------------------------------------*/
+    /* ListItem **************************/
+    .ListItem {
+        border-bottom: 1px solid #ccc;
+        display: table;
+        line-height: 1;
+        padding: 15px 20px;
+        width: 100%;
+    }
+    .ListItem span.fa {
+        margin-right: 10px;
+    }
+    a .ListItem {
+        padding-right: 50px;
+        position: relative;
+    }
+    a .ListItem:after {
+        content: "\f105";
+        font-family: FontAwesome;
+        font-size: 18px;
+        margin-top: -9px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+    }
+    a:hover>.ListItem {
+        background-color: #efefef;
+    }
+    a>.ListItem.active,
+    a:active>.ListItem {
+        background-color: #ccc;
+    }
+    /* ListItemGroup **************************/
+    .ListItemGroup {
+        background-color: #fff;
+        border: 1px solid #ccc;
+    }
+    .ListItemGroup>a:last-child>.ListItem,
+    .ListItemGroup>.ListItem:last-child,
+    .ListItemGroup>span>a:last-child>.ListItem,
+    .ListItemGroup>span>.ListItem:last-child,
+    .ListItemGroup>span>span:last-child>a>.ListItem,
+    .ListItemGroup>span>span:last-child>.ListItem {
+        border-bottom: none;
+    }
+    .ListItemGroup a {
+        text-decoration: none;
+    }
+    .Panel .ListItemGroup {
+        background-color: transparent;
+        border: none;
+        border-left: none;
+        border-right: none;
+    }
+    /* ListItemToggle **************************/
+    .ListItemToggle .ListItemContent {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .ListItemToggle .WrapperToggleButton {
+        display: table-cell;
+        width: 70px;
+    }
+    .ListItemToggle .ToggleButton {
+        display: inline-block;
+        float: right;
+    }
+    /*------------------------------------*\
+  $6.5 Patterns > Navigation
+\*------------------------------------*/
+    /* Breadcrumbs **************************/
+    .Breadcrumbs {
+        font-size: .8em;
+        margin-bottom: 15px;
+    }
+    .Breadcrumbs div {
+        -servicestudio-min-width: 100px;
+    }
+    .phone .Breadcrumbs div:first-child span {
+        display: none;
+    }
+    /* NavigationBar: Horizontal **************************/
+    .NavigationBar .InlineDropdown .InlineDropdown_icon {
+        display: inline;
+    }
+    .NavigationBar a,
+    .NavigationBar a:link,
+    .NavigationBar a:visited {
+        border-bottom: transparent;
+        color: #999;
+        display: inline-block;
+        margin-bottom: -1px;
+        padding: 10px 15px;
+        position: relative;
+    }
+    .NavigationBar a.InlineDropdown {
+        cursor: pointer;
+    }
+    .NavigationBar a.Active {
+        background: transparent;
+        color: #151515;
+        font-weight: 600;
+    }
+    .NavigationBar a:after,
+    .NavigationBar a:link:after {
+        background-color: #c7c7c7;
+        bottom: 0;
+        content: "";
+        height: 2px;
+        left: 1%;
+        position: absolute;
+        right: 1%;
+        width: 98%;
+    }
+    .NavigationBar a.Active:after {
+        background-color: #125f90;
+    }
+    .NavigationBar a.Active:not(.ie7):before,
+    .NavigationBar a.Active:not(.ie8):before {
+        border-bottom: 4px solid #125f90;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        bottom: 2px;
+        content: "";
+        height: 0;
+        left: 50%;
+        margin-left: -6px;
+        position: absolute;
+        width: 0;
+    }
+    .NavigationBar a:hover {
+        text-decoration: none;
+    }
+    /* Responsive Context **************************/
+    .desktop .NavigationBar a:hover,
+    .desktop .NavigationBar a:link:hover {
+        color: #151515;
+    }
+    .desktop .NavigationBar a:hover:after,
+    .desktop .NavigationBar a:link:hover:after {
+        background-color: #125f90;
+    }
+    .phone .NavigationBar a:active,
+    .phone .NavigationBar a:link:active,
+    .tablet .NavigationBar a:active,
+    .tablet .NavigationBar a:link:active {
+        color: #3e5154;
+    }
+    .phone .NavigationBar a:active:after,
+    .phone .NavigationBar a:link:active:after,
+    .tablet .NavigationBar a:active:after,
+    .tablet .NavigationBar a:link:active:after {
+        background-color: #125f90;
+    }
+    .phone .NavigationBar .InlineDropdown .DropdownMenu a:after,
+    .tablet .NavigationBar .InlineDropdown .DropdownMenu a:after,
+    .phone .NavigationBar .InlineDropdown .DropdownMenu a:active:after,
+    .tablet .NavigationBar .InlineDropdown .DropdownMenu a:active:after {
+        background-color: transparent;
+    }
+    .phone .NavigationBar .InlineDropdown .DropdownMenu a,
+    .tablet .NavigationBar .InlineDropdown .DropdownMenu a {
+        width: 100%;
+    }
+    .phone .NavigationBar .InlineDropdown .DropdownMenu .Active:not(.ie7):before,
+    .tablet .NavigationBar .InlineDropdown .DropdownMenu .Active:not(.ie7):before,
+    .phone .NavigationBar .InlineDropdown .DropdownMenu .Active:not(.ie8):before,
+    .tablet .NavigationBar .InlineDropdown .DropdownMenu .Active:not(.ie8):before {
+        border: none;
+    }
+    /* NavigationBar: Vertical **************************/
+    .NavigationBar.Vertical a,
+    .NavigationBar.Vertical a:link {
+        border-left: 2px solid #c7c7c7;
+        display: block;
+        margin-top: 2px;
+        padding: 10px 10px;
+    }
+    .NavigationBar.Vertical a.Active,
+    .NavigationBar.Vertical a:link.Active {
+        border-color: #125f90;
+    }
+    .NavigationBar.Vertical a:after,
+    .NavigationBar.Vertical a:link:after {
+        content: none;
+    }
+    .NavigationBar.Vertical a.Active:not(.ie7):before,
+    .NavigationBar.Vertical a.Active:not(.ie8):before {
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid #125f90;
+        border-right: 0;
+        border-top: 4px solid transparent;
+        bottom: calc(50% - 6px);
+        left: 0;
+    }
+    /* Responsive Context **************************/
+    .desktop .NavigationBar.Vertical a:hover,
+    .desktop .NavigationBar.Vertical a:link:hover {
+        border-color: #125f90;
+    }
+    .phone .NavigationBar.Vertical .InlineDropdown:after,
+    .phone .NavigationBar.Vertical .InlineDropdown:link:after,
+    .tablet .NavigationBar.Vertical .InlineDropdown:after,
+    .tablet .NavigationBar.Vertical .InlineDropdown:link:after {
+        background-color: #c7c7c7;
+        content: "";
+    }
+    .phone .NavigationBar.Vertical .InlineDropdown,
+    .phone .NavigationBar.Vertical .InlineDropdown:link,
+    .tablet .NavigationBar.Vertical .InlineDropdown,
+    .tablet .NavigationBar.Vertical .InlineDropdown:link {
+        border: none;
+        padding: 8px 6px;
+    }
+    .phone .NavigationBar.Vertical,
+    .phone .NavigationBar.Vertical,
+    .tablet .NavigationBar.Vertical,
+    .tablet .NavigationBar.Vertical,
+    .phone .NavigationBar.Vertical .InlineDropdown .InlineDropdown_label,
+    .tablet .NavigationBar.Vertical .InlineDropdown .InlineDropdown_label {
+        min-width: 60px;
+    }
+    .phone .NavigationBar.Vertical .InlineDropdown .DropdownMenu a,
+    .tablet .NavigationBar.Vertical .InlineDropdown .DropdownMenu a {
+        border: none;
+    }
+    /* SectionIndex **************************/
+    .phone .SectionIndex {
+        -servicestudio-display: none;
+    }
+    /* TabsClient **************************/
+    .Tabs {
+        border: 1px solid #ccc;
+        border-top: none;
+        min-height: 80px;
+    }
+    .Tabs_header {
+        background: #efefef;
+        display: block;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        width: 100%;
+    }
+    .desktop .Tabs_header,
+    .tablet .Tabs_header {
+        display: table;
+    }
+    .Tabs__tab {
+        background: #e4e4e4;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-right: 0;
+        border-top: 1px solid #ccc;
+        cursor: pointer;
+        display: table-cell;
+        padding: 5px 10px;
+        text-align: center;
+        transition: background-color .3s ease;
+        vertical-align: middle;
+        -servicestudio-float: left;
+    }
+    .Tabs__tab:hover {
+        background: #fff;
+    }
+    .Tabs__tab.active {
+        background: #fff;
+        border-bottom-color: #fff;
+        border-top: 0;
+        cursor: default;
+    }
+    .Tabs__tab:first-child {
+        border-left: 0;
+    }
+    .Tabs_body {
+        border: 0;
+        border-top: 0;
+        margin-top: 0;
+        padding: 10px;
+        position: relative;
+        z-index: 0;
+    }
+    .Tabs__content {
+        display: none;
+        height: 0;
+        margin-top: 0;
+        opacity: 0;
+        -servicestudio-height: auto;
+        -servicestudio-opacity: 1;
+        -servicestudio-overflow: visible;
+    }
+    .Tabs__content.active {
+        display: block;
+        height: auto;
+        opacity: 1;
+    }
+    .Tabs__Loading {
+        padding: 25px 40px;
+    }
+    .Tabs_Input {
+        display: none;
+        --servicestudio--display: block;
+    }
+    .phone .Tabs_header,
+    .tablet .Tabs_header {
+        display: block;
+        line-height: 36px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-transition: all .2s;
+        transition: all .2s;
+        white-space: nowrap;
+        width: 100%;
+    }
+    .phone .Tabs__tab,
+    .tablet .Tabs__tab {
+        height: 100%;
+        min-width: 100px;
+        text-align: center;
+        width: 1%;
+        /* hack to make tabs adjust and still overflow if needed*/
+    }
+    .phone .Tabs__tab.active+.phone .Tabs__tab,
+    .tablet .Tabs__tab.active+.tablet .Tabs__tab {
+        border-left: 0;
+    }
+    .phone .Tabs__tab.active:first-child,
+    .tablet .Tabs__tab.active:first-child {
+        border-left: none;
+    }
+    .phone .Tabs__tab:first-child,
+    .tablet .Tabs__tab:first-child {
+        border-left-width: 1px;
+    }
+    .phone .Tabs__content,
+    .tablet .Tabs__content {
+        display: none;
+        height: 0;
+        margin-top: 0;
+        opacity: 0;
+        -servicestudio-height: auto;
+        -servicestudio-opacity: 1;
+        -servicestudio-position: relative;
+    }
+    .phone .Tabs__content.active,
+    .tablet .Tabs__content.active {
+        display: block;
+        height: auto;
+        opacity: 1;
+    }
+    /* TabsClient inside Panel **************************/
+    .Panel_content.nopadding .Tabs {
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+    }
+    /* Wizard **************************/
+    .WizardParent {
+        border: 1px solid #e2e2e2;
+        display: table;
+        overflow: hidden;
+        width: 100%;
+    }
+    .WizardStep {
+        background: #fff;
+        display: table-cell;
+        font-weight: 600;
+        line-height: 38px;
+        padding-right: 20px;
+        position: relative;
+        text-align: center;
+        width: 1%;
+        -servicestudio-display: inline-block;
+        -servicestudio-width: 20%;
+    }
+    .WizardStep.ActiveStep {
+        background: #e2e2e2;
+        color: #fff;
+        font-weight: bold;
+    }
+    .WizardStep.Past {
+        background: #fff;
+    }
+    .WizardStep a,
+    .WizardStep a:link {
+        display: block;
+        line-height: 38px;
+        text-align: center;
+    }
+    .WizardStep a,
+    .WizardStep a:link,
+    .WizardStep a[disabled="disabled"],
+    .WizardStep a[disabled="disabled"]:hover {
+        color: #333;
+    }
+    /* after: right arrow on wizard step **************************/
+    .WizardStep:after {
+        border-right: 1px solid #e2e2e2;
+        border-top: 1px solid #e2e2e2;
+        content: "";
+        height: 38px;
+        position: absolute;
+        right: 8px;
+        top: 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        width: 38px;
+        z-index: 1;
+    }
+    .WizardStep:last-of-type:after {
+        background: none;
+    }
+    /* before: left "inverted" arrow on wizard step **************************/
+    .WizardStep:before {
+        border-bottom: 20px solid #fff;
+        border-left: 20px solid transparent;
+        border-top: 20px solid #fff;
+        content: "";
+        height: 0;
+        left: -20px;
+        position: absolute;
+        top: 0;
+        width: 0;
+    }
+    .WizardStep:first-of-type:before {
+        border: none;
+        margin-left: 0;
+    }
+    .WizardStep.Past:before {
+        border-bottom-color: #fff;
+        border-top-color: #fff;
+    }
+    .WizardStep.ActiveStep:before {
+        border-bottom-color: #e2e2e2;
+        border-top-color: #e2e2e2;
+    }
+    .WizardStep.LastStep:after,
+    .WizardStep.ActiveStep:after,
+    .WizardStep.HideArrow:after,
+    .WizardStep:last-of-type:after {
+        border: 0;
+        content: "";
+    }
+    /*------------------------------------*\
+  $6.6 Patterns > Responsive
+\*------------------------------------*/
+    /* TableRecordsResponsive **************************/
+    .phone .TableRecordsResponsive .TableRecords {
+        border: 1px solid #dcddde;
+        padding-top: 0;
+    }
+    .phone .TableRecordsResponsive .TableRecords td {
+        display: block;
+        padding-left: 100px;
+        padding-right: 10px;
+        position: relative;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div {
+        font-size: 14px;
+        text-align: left;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Counter.Small .Counter_number {
+        font-size: 18px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Counter.Medium .Counter_number {
+        font-size: 24px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Counter.Large .Counter_number {
+        font-size: 42px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Progress.Medium .Progress_bar {
+        font-size: 10px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Progress.Large .Progress_bar {
+        font-size: 20px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Small .TileIcon_icon {
+        font-size: 30px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Small .TileIcon_text {
+        font-size: 16px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Medium .TileIcon_icon {
+        font-size: 60px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Medium .TileIcon_text {
+        font-size: 22px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Large .TileIcon_icon {
+        font-size: 70px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Large .TileIcon_text {
+        font-size: 28px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .TileIcon_icon {
+        font-size: 48px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .TileIcon_text {
+        font-size: 16px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Small .TileIconText_icon {
+        font-size: 36px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Medium .TileIconText_icon {
+        font-size: 72px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Large .TileIconText_icon {
+        font-size: 88px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .TileIconText_icon {
+        font-size: 60px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .TileIconText_right .Heading2 {
+        font-size: 22px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Small .TileIconText_right .TilleIconText_text {
+        font-size: 16px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Medium .TileIconText_right .TilleIconText_text {
+        font-size: 22px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Large .TileIconText_right .TilleIconText_text {
+        font-size: 28px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .TileIconText_right .TilleIconText_text {
+        font-size: 16px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Small .TileNumber_number {
+        font-size: 18px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Small .TileNumber_text {
+        font-size: 14px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Medium .TileNumber_number {
+        font-size: 48px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Medium .TileNumber_text {
+        font-size: 20px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Large .TileNumber_number {
+        font-size: 62px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Tile.Large .TileNumber_text {
+        font-size: 20px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .TileNumber_number {
+        font-size: 45px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .TileNumber_text {
+        font-size: 14px;
+    }
+    .phone .TableRecordsResponsive .TableRecords tr td div .Blank_icon {
+        font-size: 80px;
+    }
+    .phone .TableRecordsResponsive .TableRecords .silkui_TableRecords_Label {
+        font-size: 12px;
+        font-weight: 600;
+        left: 15px;
+        position: absolute;
+        width: 80px;
+        word-wrap: break-word;
+    }
+    .phone .TableRecordsResponsive .TableRecords .TableRecords_OddRow {
+        background-color: #f4f4f4;
+    }
+    .phone .TableRecordsResponsive .TableRecords .TableRecords_OddLine,
+    .phone .TableRecordsResponsive .TableRecords .TableRecords_EvenLine {
+        border: none;
+    }
+    .phone .TableRecordsResponsive .TableRecords td {
+        padding: 10px;
+    }
+    .TableRecordsResponsive .TableRecords td:before {
+        display: none;
+    }
+    .phone .TableRecordsResponsive .TableRecords td.TableRecords_OddLine,
+    .phone .TableRecordsResponsive .TableRecords td.TableRecords_EvenLine {
+        cursor: default;
+    }
+    /* FIX FOR TABLE'S WHEN REFRESHED BY AJAX WITH VERTICAL SLIDE*/
+    span[id*="TableAjaxRfrsh"] {
+        width: 100%;
+    }
+    /*------------------------------------*\
+  $6.7 Patterns > Structure
+\*------------------------------------*/
+    .Page.phone .mob_BreakAll>.Column {
+        -servicestudio-width: 100%;
+    }
+    /* Gallery ***************************/
+    .Gallery .GalleryWrapper {
+        margin-left: -10px;
+        -servicestudio-margin-left: 0;
+    }
+    .Gallery .GalleryItem>span {
+        display: block;
+    }
+    .Gallery .GalleryItem {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        vertical-align: top;
+        -servicestudio-width: 100%;
+    }
+    .Gallery .GalleryWrapper .ListRecords {
+        display: inline;
+    }
+    .Gallery .GalleryWrapper .GalleryItem .Box {
+        margin-bottom: 0;
+    }
+    .Gallery .GalleryWrapper .GalleryItem>img {
+        width: 100%;
+    }
+    .Gallery .GalleryWrapper .GalleryItem [class*="ThemeGrid_Width"] {
+        margin: 0;
+        width: 100%;
+    }
+    /*------------------------------------*\
+  $7 Patterns > Utilities
+\*------------------------------------*/
+    /* Card Flip **************************/
+    .CardFlip {
+        position: relative;
+        -moz-transform: perspective(1000px);
+        -ms-transform: perspective(1000px);
+        -webkit-perspective: 1000;
+        perspective: 1000;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+    }
+    .CardFlip:hover .CardFlip_container.hover,
+    .CardFlip .CardFlip_container.flipped {
+        -webkit-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+    .CardFlip .CardFlip_container {
+        position: relative;
+        -webkit-transition: .6s;
+        transition: .6s;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    .CardFlip .CardFlip__frontContainer,
+    .CardFlip .CardFlip__backContainer {
+        left: 0;
+        min-height: 80px;
+        top: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .CardFlip .CardFlip__frontContainer {
+        position: relative;
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        z-index: 2;
+    }
+    .CardFlip .CardFlip__backContainer {
+        position: absolute;
+        -webkit-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        width: 100%;
+        -servicestudio--webkit-transform: rotateY(0deg);
+        -servicestudio-position: relative;
+    }
+    /* FIX FOR IE */
+    .Page.ie .CardFlip {
+        -webkit-perspective: 1000;
+        perspective: 1000;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    .Page.ie .CardFlip:hover .CardFlip_container.hover .CardFlip__backContainer,
+    .Page.ie .CardFlip .CardFlip_container.flipped .CardFlip__backContainer {
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    .Page.ie .CardFlip:hover .CardFlip_container.hover .CardFlip__frontContainer,
+    .Page.ie .CardFlip .CardFlip_container.flipped .CardFlip__frontContainer {
+        -webkit-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+    }
+    .Page.ie .CardFlip .CardFlip_container {
+        -webkit-transition: .6s;
+        transition: .6s;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    .Page.ie .CardFlip .CardFlip__frontContainer,
+    .Page.ie .CardFlip .CardFlip__backContainer {
+        -webkit-transition: .6s;
+        transition: .6s;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    .Page.ie .CardFlip .CardFlip__frontContainer {
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        z-index: 2;
+    }
+    .Page.ie .CardFlip .CardFlip__backContainer {
+        -webkit-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+    }
+    .Page.ie .CardFlip:hover .CardFlip_container.hover,
+    .Page.ie .CardFlip .CardFlip_container.flipped {
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    /* File Upload **************************/
+    .FileUpload {
+        background-color: rgba(0, 0, 0, .05);
+        border: 1px solid #ccc;
+        cursor: pointer;
+        display: block;
+        overflow: hidden;
+        padding: 10px;
+        position: relative;
+    }
+    .FileUpload_Button,
+    .FileUpload_Label {
+        display: inline-block;
+        line-height: 32px;
+        -servicestudio-margin: 0 15px;
+        -servicestudio-min-width: 100px;
+    }
+    .FileUpload_Button .Button {
+        margin-left: 0;
+    }
+    .FileUpload_Label {
+        display: inline-block;
+        margin-top: 0;
+        padding: 0 10px;
+        position: relative;
+    }
+    .FileUpload_Widget {
+        cursor: pointer;
+        filter: alpha(opacity=0);
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        -servicestudio-z-index: -1;
+    }
+    .FileUpload_Widget input[type=file] {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+    }
+    .FileUpload.active .FileUpload_Label {
+        color: #999;
+    }
+    /*------------------------------------*\
+  $7. Usefull Classes
+\*------------------------------------*/
+    /* Text Classes **************************/
+    .Heading1 {
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 30px;
+    }
+    .Heading2 {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 20px;
+    }
+    .Heading3 {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 18px;
+    }
+    .Heading4 {
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 15px;
+    }
+    span.Heading1,
+    span.Heading2,
+    span.Heading3,
+    span.Heading4 {
+        display: block;
+    }
+    /* Table **************************/
+    .TableVerticalAlign .Cell1,
+    .TableVerticalAlign .Cell2 {
+        padding: 3px;
+    }
+    .TableVerticalAlign .Cell1>input[type="radio"],
+    .TableVerticalAlign .Cell1>input[type="checkbox"],
+    .TableVerticalAlign .Cell2>input[type="radio"],
+    .TableVerticalAlign .Cell2>input {
+        display: block;
+    }
+    .Text_Note {
+        color: #888;
+        font-size: 12px;
+    }
+    .Text_Error {
+        color: #c7331f;
+    }
+    .Label {
+        background-color: #cfcfcf;
+        color: #666;
+        font-size: 12px;
+        font-weight: normal;
+        margin: 0 10px;
+        padding: 2px 5px;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+    /* Buttons **************************/
+    .Button {
+        background-color: #cfcfcf;
+        border: 1px solid #999;
+        color: #999;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        height: 32px;
+        line-height: 30px;
+        margin-left: 10px;
+        min-width: 80px;
+        padding: 0 15px;
+        text-align: center;
+        text-decoration: none;
+    }
+    a.Button {
+        background-color: #cfcfcf;
+        border: 1px solid #999;
+        color: #999;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        height: 32px;
+        line-height: 30px;
+        margin-left: 10px;
+        min-width: 80px;
+        padding: 0 15px;
+        text-align: center;
+        text-decoration: none;
+    }
+    /* margin icon on button **************************/
+    a.Button span.fa {
+        margin-right: 5px;
+    }
+    .desktop .Button:hover,
+    .desktop a.Button:hover {
+        background-color: #e2e2e2;
+        text-decoration: none;
+    }
+    .Button.FullWidth {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    .Button[disabled],
+    .Button:disable {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        color: #ccc;
+    }
+    /* Default Action Button **************************/
+    .Button.ButtonDefault,
+    .Button.Is_Default {
+        background-color: #125f90;
+        border-color: #0d4d75;
+        color: #fff;
+        text-shadow: none;
+    }
+    .desktop .Button.ButtonDefault:hover,
+    .desktop .Button.Is_Default:hover {
+        background-color: #499acd;
+        border-color: #125f90;
+    }
+    .Button.Cancel {
+        background-color: #fff;
+        border-color: #0d4d75;
+        color: #125f90;
+    }
+    .desktop .Button.Cancel:hover {
+        background-color: #fff;
+        border-color: #499acd;
+        color: #499acd;
+    }
+    .Button.Success {
+        background-color: #a9c264;
+        border-color: #96ad58;
+        color: #fff;
+    }
+    .desktop .Button.Success:hover {
+        background-color: #c0dc74;
+        border-color: #b3ce68;
+    }
+    .Button.Danger,
+    a.ActionDelete {
+        background-color: #e09d90;
+        border-color: #df3a01;
+        color: #fff;
+    }
+    .desktop .Button.Danger:hover {
+        background-color: #a6331b;
+    }
+    .Button.Link {
+        background-color: #fff;
+        border-color: #fff;
+        color: #369;
+    }
+    .desktop .Button.Link:hover {
+        background-color: #fff;
+        border-color: #499acd;
+        color: #499acd;
+    }
+    .Button.Small,
+    .Panel__Actions .Button,
+    .Section_Actions .Button {
+        font-size: 11px;
+        height: 26px;
+        line-height: 24px;
+        min-width: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .Button.Icon {
+        min-width: 0;
+    }
+    .Button.Icon span.fa {
+        margin: 0;
+    }
+    .Button.Loading:before,
+    .Button.Loading[disabled]:before,
+    .Button.Loading:disabled:before {
+        background-image: url(/WebPatterns/img/loadinggrey.GIF);
+        background-size: 16px 16px;
+        content: "";
+        display: inline-block;
+        height: 16px;
+        margin-right: 5px;
+        margin-top: -2px;
+        vertical-align: middle;
+        width: 16px;
+    }
+    .Button.Is_Default.Loading:before,
+    .Button.Is_Default.Loading[disabled]:before,
+    .Button.Is_Default.Loading:disabled:before,
+    .Button.ButtonDefault.Loading:before,
+    .Button.ButtonDefault.Loading[disabled]:before,
+    .Button.ButtonDefault.Loading:disabled:before {
+        background-image: url(/WebPatterns/img/loading.GIF);
+    }
+    .Button.Small.Loading:before {
+        margin-top: 4px;
+    }
+    .Button.Loading.Icon:before {
+        margin-right: 0;
+    }
+    .Button.Loading span.fa {
+        display: none;
+    }
+    /* Responsive Context **************************/
+    .phone .Button,
+    .tablet .Button,
+    .phone a.Button,
+    .tablet a.Button {
+        height: 38px;
+        line-height: 36px;
+        text-decoration: none;
+    }
+    .phone .Button.Small,
+    .tablet .Button.Small {
+        height: 30px;
+        line-height: 28px;
+    }
+    /* Colors: Background and Text **************************/
+    .Transparent {
+        background-color: transparent;
+        color: #666;
+    }
+    .White {
+        background-color: #fff;
+        color: #333;
+    }
+    .Text_white {
+        color: #fff;
+    }
+    .Red {
+        background-color: #e74c3c;
+        color: #fff;
+    }
+    .Page .Text_red {
+        color: #e74c3c;
+    }
+    .DarkRed {
+        background-color: #c0392b;
+        color: #fff;
+    }
+    .Page .Text_darkRed {
+        color: #c0392b;
+    }
+    .Green {
+        background-color: #27ae60;
+        color: #fff;
+    }
+    .Page .Text_green {
+        color: #27ae60;
+    }
+    .LightGreen {
+        background-color: #2ecc71;
+        color: #fff;
+    }
+    .Page .Text_lightGreen {
+        color: #2ecc71;
+    }
+    .Blue {
+        background-color: #2980b9;
+        color: #fff;
+    }
+    .Page .Text_blue {
+        color: #2980b9;
+    }
+    .DarkBlue {
+        background-color: #2c3e50;
+        color: #fff;
+    }
+    .Page .Text_darkblue {
+        color: #2c3e50;
+    }
+    .Plum {
+        background-color: #9b59b6;
+        color: #fff;
+    }
+    .Page .Text_plum {
+        color: #9b59b6;
+    }
+    .DarkPlum {
+        background-color: #8e44ad;
+        color: #fff;
+    }
+    .Page .Text_darkplum {
+        color: #8e44ad;
+    }
+    .Orange {
+        background-color: #f39c12;
+        color: #fff;
+    }
+    .Page .Text_orange {
+        color: #f39c12;
+    }
+    .Yellow {
+        background-color: #f1c40f;
+        color: #fff;
+    }
+    .Page .Text_yellow {
+        color: #f1c40f;
+    }
+    .Silver {
+        background-color: #ecf0f1;
+        color: #666;
+    }
+    .Page .Text_silver {
+        color: #bdc3c7;
+    }
+    .Gray {
+        background-color: #7f8c8d;
+        color: #fff;
+    }
+    .Page .Text_gray {
+        color: #7f8c8d;
+    }
+    .Black {
+        background-color: #333;
+        color: #fff;
+    }
+    .Page .Text_black {
+        color: #333;
+    }
+    .Turquoise {
+        background-color: #1abc9c;
+        color: #fff;
+    }
+    .Page .Text_turquoise {
+        color: #1abc9c;
+    }
+    /* ImageStyle **************************/
+    img.Image_circle {
+        border-radius: 50%;
+    }
+    img.Image_rounded {
+        border-radius: 6px;
+    }
+    img.Image_thumb {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        display: inline-block;
+        height: auto;
+        line-height: 1.42857143;
+        max-width: 100%;
+        padding: 4px;
+    }
+    /* Iframe */
+    /*------------------------------------*\
+  $8. RichWidgets
+\*-------------------------------------*/
+    /* Popup Iframe **************************/
+    .os-internal-Popup.os-internal-ui-dialog iframe {
+        border-radius: 4px;
+    }
+    /* Popups **************************/
+    .os-internal-Popup .os-internal-ui-dialog,
+    .os-internal-Popup.os-internal-ui-dialog {
+        border: 0;
+        border-radius: 4px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, .4) !important;
+        max-height: 95%;
+        /* iframe document height fix */
+        overflow: visible !important;
+    }
+    div.os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-content,
+    div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-content {
+        max-height: 100%;
+        /* iframe document height fix */
+    }
+    div.os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-title,
+    div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-title {
+        color: #fff;
+        font-weight: 600;
+        left: 20px;
+        margin: 0;
+        top: 10px;
+    }
+    div.os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-titlebar-close,
+    div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-titlebar-close {
+        background: url(/WebPatterns/img/PopupCloseWhite.png) no-repeat;
+        height: 20px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        transition: all .3s ease;
+        width: 20px;
+    }
+    div.os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-titlebar-close:hover,
+    div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-titlebar-close:hover {
+        opacity: .7;
+        transform: rotate(90deg);
+    }
+    div.os-internal-Popup .os-internal-ui-dialog,
+    div.os-internal-Popup.os-internal-ui-dialog {
+        background-color: #fff;
+        border: none;
+        border-radius: 4px;
+    }
+    div.os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-titlebar,
+    div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-titlebar {
+        background: #333;
+        border-bottom: none;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        height: 40px;
+    }
+    ul.os-internal-ui-autocomplete a {
+        -webkit-transition: none;
+        transition: none;
+    }
+    ul.os-internal-ui-autocomplete a.os-internal-ui-state-hover {
+        background: #069;
+        cursor: default;
+        text-decoration: none;
+    }
+    .os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-title,
+    .os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-title {
+        top: 4px;
+    }
+    div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-titlebar-close-no-title {
+        background: url(/WebPatterns/img/PopupCloseDark.png) no-repeat;
+        height: 20px;
+        right: 5px;
+        top: 5px;
+        transition: all .3s ease;
+        width: 20px;
+    }
+    div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-titlebar-close-no-title:hover {
+        background: url(/WebPatterns/img/PopupCloseDark.png) no-repeat;
+        opacity: .7;
+        transform: rotate(90deg);
+    }
+    /* Feedback Message **************************/
+    div.Feedback_Message_Wrapper {
+        left: 0;
+        margin-top: 124px;
+    }
+    div.Feedback_Message_Error,
+    div.Feedback_Message_Success,
+    div.Feedback_Message_Warning,
+    div.Feedback_Message_Info {
+        border-radius: 0;
+        box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .5);
+        color: #fff;
+        font-size: 14px;
+        line-height: normal;
+        max-width: 700px;
+        min-width: 400px;
+        padding: 10px 30px 10px 25px;
+        word-break: break-word;
+        -webkit-backface-visibility: hidden;
+    }
+    div.Feedback_Message_Error span,
+    div.Feedback_Message_Success span,
+    div.Feedback_Message_Warning span,
+    div.Feedback_Message_Info span,
+    a.Feedback_Message_Wrapper_Close {
+        display: block;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    div.Feedback_Message_Error img,
+    div.Feedback_Message_Success img,
+    div.Feedback_Message_Warning img,
+    div.Feedback_Message_Info img {
+        display: none;
+    }
+    a.Feedback_Message_Wrapper_Close {
+        font-size: 14px;
+        right: 0;
+        text-align: right;
+        top: 2px;
+    }
+    a.Feedback_Message_Wrapper_Close:hover {
+        text-decoration: none;
+    }
+    .Feedback_Message_Wrapper_Close:after {
+        color: #fff;
+        content: "\f00d";
+        /* fa-times at http://fortawesome.github.io/Font-Awesome/icons/ */
+        font-family: FontAwesome;
+        margin-left: 3px;
+        margin-top: 0;
+    }
+    .Feedback_Message_Error {
+        background-color: #e09d90;
+        border-color: #d87c69;
+    }
+    .Feedback_Message_Error:before {
+        content: "\f057";
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-weight: normal;
+        left: 12px;
+        line-height: 1;
+        position: absolute;
+        top: 12px;
+    }
+    .Feedback_Message_Success {
+        background-color: #a9c264;
+        border-color: #97ae58;
+    }
+    .Feedback_Message_Success:before {
+        content: "\f058";
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-weight: normal;
+        left: 12px;
+        line-height: 1;
+        position: absolute;
+        top: 12px;
+    }
+    .Feedback_Message_Warning {
+        background-color: #f5c459;
+        border-color: #c78e10;
+    }
+    .Feedback_Message_Warning:before {
+        content: "\f071";
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-weight: normal;
+        left: 12px;
+        line-height: 1;
+        position: absolute;
+        top: 12px;
+    }
+    .Feedback_Message_Info {
+        background-color: #62b6d1;
+        border-color: #009bd0;
+    }
+    .Feedback_Message_Info:before {
+        content: "\f05a";
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-weight: normal;
+        left: 12px;
+        line-height: 1;
+        position: absolute;
+        top: 12px;
+    }
+    .Tabs_Wrapper {
+        border: 1px solid transparent;
+    }
+    .Tabs_TabOn,
+    li.Tabs_TabOn {
+        background: rgb(242, 242, 242);
+        border-bottom: 1px solid rgb(242, 242, 242);
+    }
+    ul.Tabs_Header {
+        height: 43px;
+    }
+    .Tabs_TabOn,
+    li.Tabs_TabOn,
+    .Tabs_TabOff,
+    li.Tabs_TabOff {
+        padding: 10px;
+    }
+    .Tabs_TabBody.OSAutoMarginTop {
+        margin-top: 42px;
+    }
+    .Tabs_TabBody {
+        padding: 20px;
+    }
+    .Tabs_TabOff,
+    li.Tabs_TabOff,
+    a.Tabs_TabOff,
+    a.Tabs_TabOff:link,
+    a.Tabs_TabOff:visited {
+        background: #e6e6e6;
+    }
+    a.Tabs_TabOff:hover {
+        background: #e6e6e6;
+        text-decoration: underline;
+    }
+    /* RichWidgets Tabs Responsive*/
+    .tablet li.Tabs_TabOff,
+    .tablet div.Tabs_TabOff,
+    .phone li.Tabs_TabOff,
+    .phone div.Tabs_TabOff {
+        box-sizing: content-box;
+    }
+    .tablet .Tabs_TabOff,
+    .tablet li.Tabs_TabOff,
+    .phone .Tabs_TabOff,
+    .phone li.Tabs_TabOff {
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        width: 34px;
+    }
+    /* Feedback Ajax Wait **************************/
+    @-webkit-keyframes pulse {
+        0% {
+            -webkit-transform: scale(.8);
+        }
+        15% {
+            -webkit-transform: scale(1);
+        }
+        30% {
+            -webkit-transform: scale(.8);
+        }
+        45% {
+            -webkit-transform: scale(1);
+        }
+        60% {
+            -webkit-transform: scale(.8);
+        }
+        100% {
+            -webkit-transform: scale(.8);
+        }
+    }
+    @-ms-keyframes pulse {
+        0% {
+            -ms-transform: scale(.8);
+        }
+        15% {
+            -ms-transform: scale(1);
+        }
+        30% {
+            -ms-transform: scale(.8);
+        }
+        45% {
+            -ms-transform: scale(1);
+        }
+        60% {
+            -ms-transform: scale(.8);
+        }
+        100% {
+            -ms-transform: scale(.8);
+        }
+    }
+    @keyframes pulse {
+        0% {
+            transform: scale(.8);
+        }
+        15% {
+            transform: scale(1);
+        }
+        30% {
+            transform: scale(.8);
+        }
+        45% {
+            transform: scale(1);
+        }
+        60% {
+            transform: scale(.8);
+        }
+        100% {
+            transform: scale(.8);
+        }
+    }
+    .Feedback_AjaxWait {
+        background-color: #ebecec;
+        background-image: none;
+        bottom: 5px;
+        color: black;
+        font-size: 9px;
+        padding: 10px;
+        position: fixed;
+        right: 56px;
+        z-index: 10000;
+        -servicestudio-display: inline-block;
+        -servicestudio-position: static;
+    }
+    .Feedback_AjaxWait img {
+        -webkit-animation-duration: 1000ms;
+        animation-duration: 1000ms;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: pulse;
+        animation-name: pulse;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+        display: block;
+        margin-bottom: 5px;
+        text-align: center;
+        width: 36px;
+    }
+    .Feedback_AjaxWait_CursorProgress,
+    .Feedback_AjaxWait_CursorProgress a,
+    .Feedback_AjaxWait_CursorProgress input {
+        cursor: progress;
+    }
+    /* Popups **************************/
+    .os-internal-Popup .os-internal-ui-dialog,
+    .os-internal-Popup.os-internal-ui-dialog {
+        border: 1px solid #999;
+    }
+    .os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-titlebar,
+    .os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-titlebar {
+        background: #888;
+    }
+    ul.os-internal-ui-autocomplete a {
+        -webkit-transition: none;
+        transition: none;
+    }
+    ul.os-internal-ui-autocomplete a.os-internal-ui-state-hover {
+        background: #069;
+        cursor: default;
+        text-decoration: none;
+    }
+    .os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-title,
+    .os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-title {
+        top: 4px;
+    }
+    /* Pagination **************************/
+    a.ListNavigation_PageNumber:link,
+    span.ListNavigation_CurrentPageNumber,
+    span.ListNavigation_Ellipsis {
+        margin: 0 0 0 5px;
+        padding: 5px 12px;
+    }
+    /* Responsive Context **************************/
+    .phone a.ListNavigation_PageNumber:link,
+    .phone span.ListNavigation_CurrentPageNumber,
+    .phone span.ListNavigation_Ellipsis,
+    .tablet a.ListNavigation_PageNumber:link,
+    .tablet span.ListNavigation_CurrentPageNumber,
+    .tablet span.ListNavigation_Ellipsis {
+        display: none;
+    }
+    span.ListNavigation_CurrentPageNumber {
+        background: #505050;
+        border-color: #404040;
+    }
+    a.ListNavigation_Previous:link,
+    a.ListNavigation_Next:link,
+    span.ListNavigation_DisabledNext,
+    span.ListNavigation_DisabledPrevious {
+        font-size: 12px;
+        margin: 0 0 0 5px;
+        padding: 6px 20px 7px 20px;
+    }
+    span.ListNavigation_DisabledNext,
+    span.ListNavigation_DisabledPrevious {
+        display: none;
+    }
+    .ListNavigation_Previous:before,
+    .ListNavigation_DisabledPrevious:before {
+        content: "\f060";
+        /* fa-arrow-left at http://fortawesome.github.io/Font-Awesome/icons/ */
+        font-family: FontAwesome;
+        margin-right: 5px;
+    }
+    .ListNavigation_Next:after,
+    .ListNavigation_DisabledNext:after {
+        content: "\f061";
+        /* fa-arrow-right at http://fortawesome.github.io/Font-Awesome/icons/ */
+        font-family: FontAwesome;
+        margin-left: 7px;
+    }
+    /*------------------------------------*\
+  $9. Responsive Classes
+\*-------------------------------------*/
+    .desktop .HiddenOnDesktop,
+    .tablet .HiddenOnTablet,
+    .phone .HiddenOnPhone {
+        display: none !important;
+        -servicestudio-display: none !important;
+    }
+    /*------------------------------------*\
+  $10. Additional Classes
+\*------------------------------------*/
+    .desktop .ShowOnlyOnResponsiveTable,
+    .tablet.landscape .ShowOnlyOnResponsiveTable {
+        display: none;
+    }
+    fieldset {
+        border: 1px solid #ccc;
+        padding: 5px 10px 10px;
+    }
+    .PH:empty,
+    .Hidden,
+    .Print_visible,
+    .desktop .HiddenInDesktop {
+        display: none;
+    }
+    @media print {
+        .Print_hidden {
+            display: none;
+        }
+    }
+    .Float_right {
+        float: right;
+    }
+    .Float_left {
+        float: left;
+    }
+    /* nicolasgallagher.com/micro-clearfix-hack **************************/
+    .Clearfix:before,
+    .Clearfix:after {
+        content: " ";
+        display: table;
+    }
+    .Clearfix:after {
+        clear: both;
+    }
+    .Clearfix {
+        /* IE 6/7 only */
+        *zoom: 1;
+    }
+    .noTransition {
+        -webkit-transition: none !important;
+        transition: none !important;
+    }
+    .Note {
+        color: #888;
+    }
+    .Bold {
+        font-weight: bold;
+    }
+    .Italic {
+        font-style: italic !important;
+    }
+    .Bold.Italic {
+        font-style: italic !important;
+        font-weight: bold !important;
+    }
+    .Underline {
+        display: inline;
+        text-decoration: underline !important;
+    }
+    .Text_small {
+        font-size: .8em !important;
+    }
+    .Text_uppercase {
+        text-transform: uppercase !important;
+    }
+    .Text_large {
+        font-size: 1.2em !important;
+    }
+    .Text_shadow {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, .7);
+    }
+    .Code {
+        font-family: monospace;
+        font-size: .9em;
+    }
+    .First {
+        margin-left: 0 !important;
+    }
+    .Last {
+        margin-right: 0 !important;
+    }
+    /* Chart Colors **************************/
+    .Chart_Color1 {
+        color: #e83e26;
+    }
+    .Chart_Color2 {
+        color: #00a8c4;
+    }
+    .Chart_Color3 {
+        color: #e68a00;
+    }
+    .Chart_Color4 {
+        color: #f3da61;
+    }
+    .Chart_Color5 {
+        color: #88b23a;
+    }
+    .Chart_Color6 {
+        color: #a5d38e;
+    }
+    .Chart_Color7 {
+        color: #cc1439;
+    }
+    .Chart_Color8 {
+        color: #e68c7c;
+    }
+    .Chart_Color9 {
+        color: #976bb3;
+    }
+    .Chart_Color10 {
+        color: #ccb8cc;
+    }
+    /* Vertical align **************************/
+    .Align_top {
+        vertical-align: top;
+    }
+    .Align_bottom {
+        vertical-align: bottom;
+    }
+    .Align_middle {
+        vertical-align: middle;
+    }
+    /* BottomMenu **************************/
+    .BottomMenu_wrapper {
+        background-color: #fff;
+        border-color: #ddd;
+        border-top-style: solid;
+        border-top-width: 1px;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+    .BottomMenu_wrapper a,
+    .BottomMenu_item {
+        color: #111;
+        display: table-cell;
+        height: 50px;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        width: 1%;
+    }
+    .BottomMenu_wrapper a:hover {
+        -webkit-tap-highlight-color: transparent;
+        text-decoration: none;
+    }
+    .BottomMenu_item.active {
+        background-color: black;
+        color: #fff;
+    }
+    .BottomMenu__text {
+        display: block;
+        font-size: 12px;
+        line-height: 21px;
+    }
+    .BottomMenu_item .fa {
+        position: relative;
+        top: 3px;
+    }
+    .BottomMenu_wrapper a,
+    .BottomMenu_item {
+        -servicestudio-width: 90%;
+    }
+    .PH_Preview {
+        -servicestudio-min-height: 40px;
+    }
+    /* Platform Forms with mandatory */
+    .Form label {
+        position: relative;
+        /* Use this because Mandatory Icon need parent with position relative */
+    }
+    /* Select 2 Inside Actions Placeholder */
+    .Actions .select2-container {
+        text-align: left;
+    }
+    /* Edit Records / Show Records for Phone and Tablet */
+    /* First Row on tablet and phone **************************/
+    .tablet table.EditRecord tr:first-child td,
+    .tablet table.ShowRecord tr:first-child td,
+    .phone table.EditRecord tr:first-child td,
+    .phone table.ShowRecord tr:first-child td {
+        padding-top: 5px;
+    }
+    .tablet table.EditRecord tr td,
+    .tablet table.ShowRecord tr td,
+    .phone table.EditRecord tr td,
+    .phone table.ShowRecord tr td {
+        padding-right: 0;
+    }
+    /* Last Row on tablet and phone **************************/
+    .tablet table.EditRecord tr:last-child td,
+    .tablet table.ShowRecord tr:last-child td,
+    .phone table.EditRecord tr:last-child td,
+    .phone table.ShowRecord tr:last-child td {
+        padding-bottom: 0;
+        padding-top: 10px;
+    }
+    /* Colummns on tablet and phone **************************/
+    .tablet .EditRecord td,
+    .phone .EditRecord td,
+    .tablet .ShowRecord td,
+    .phone .ShowRecord td {
+        display: block;
+        float: left;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+    /* Last column on tablet and phone **************************/
+    .tablet table.EditRecord tr td:last-child,
+    .phone table.EditRecord tr td:last-child,
+    .tablet table.ShowRecord tr td:last-child,
+    .phone table.ShowRecord tr td:last-child {
+        padding-top: 5px;
+    }
+    .tablet td.EditRecord_Caption:first-child+.EditRecord_Value,
+    .phone td.EditRecord_Caption:first-child+.EditRecord_Value {
+        padding-right: 0;
+    }
+    /* ExcludeFromPickers: AccordionVertical, AccordionVertical___icon, button, AccordionVertical___title, AccordionVertical__content,
+AccordionVertical__header, AccordionVertical_item, active, Active, ActiveStep, ActiveStep:before, ampm, arrangeHorizontal, arrangeVertical,
+Auto, autoHeight, Badge, Balloon, Balloon__heading, Balloon_content, Balloon_footer, Blank, Blank_action, Blank_desc, Blank_icon, Blank_row,
+Blank_wrapper, BottomMenu__text, BottomMenu_item, BottomMenu_wrapper, Box, Breadcrumbs, ButtonDropdown, ButtonDropdown_button, ButtonDropdown_text,
+ButtonGroup, ButtonGroup_button, Buttons, Buttons_Left, Buttons_Right, calendar, calendarPattern, CalendarPopup, CalendarWrapper, Card, Card_Actions,
+Card_Image, Card_Text, Card_Title, CardLeftImage, CardSimple, CardSimpleImage, Cell1, Cell2, changed, colon, colSpan8, Column, Columns, Counter,
+Counter_label, Counter_number, Counter_row, day, desktop, disabled, done, DropdownMenu, EditableTable, EditRecord, EditRecord_Buttons, EditRecord_Caption,
+EditRecord_Value, emptycell, emptyrow, Error, fa, fa-angle-left, fa-angle-right, fa-fw, Feedback_AjaxWait, Feedback_AjaxWait_CursorProgress, Feedback_Message_Error,
+Feedback_Message_Info, Feedback_Message_Success, Feedback_Message_Warning, Feedback_Message_Wrapper_Close, Filters_Wrapper, firefox, Form, form-top, hilite, hour, Icon,
+IconBadge, IconBadge_number, IconDropdown, IconDropdown_button, IconTrigger, ie, ie8, ie9, InfoTooltip, InlineDropdown, InlineDropdown_icon, InlineDropdown_label,
+InputMandatorySymbol, ios, Is_Default, js_open, Label, LabelValues, LastStep, ListItem, ListItemContent, ListItemGroup, ListItemToggle, ListNavigation_DisabledNext,
+ListNavigation_DisabledPrevious:before, ListNavigation_Next, ListNavigation_Previous:before, ListRecords, Loading, MandatoryCaption, mini, minute, mob_BreakAll, Modal,
+ModalBackground, ModalContainer, ModalMessage, ModalOpened, name, NavigationBar, nopadding, notclose, open, OSAutoMarginTop, os-internal-Popup, os-internal-ui-dialog,
+os-internal-ui-dialog-title, os-internal-ui-dialog-titlebar, othermonth, oweekend, owl-buttons, owl-carousel, owl-controls, owl-item, owl-next, owl-page, owl-prev,
+owl-theme, owl-wrapper, owl-wrapper-outer, Page, PageHide, PageOverlay, PageOverlayLoader, PageOverlayShow, Panel, Panel__actions, Panel__title, Panel_content, Panel_footer,
+Panel_header, Past, PH, PH_Preview, phone, portrait, Post, Post__date, Post__description, Post_content, Post_icon, Progress, Progress_bar, Prompt, silkui_TableRecords_Label,
+RecordPicture, RecordPicture_Wrapper, Row, rowhilite, rwd_debug, Search_wrapper, SearchNavigation_frame, Section, Section__actions, Section__title, Section_Actions,
+Section_content, Section_header, SectionExpandable, SectionExpandable__icon, SectionExpandable__title, SectionExpandable_content, SectionExpandable_header, SectionIndex,
+Separator, ShowRecord, ShowRecord_Caption, ShowRecord_Value, Slider, Slider_currentvalue, Slider_currentvalue2, Slider_InputNumber, Slider_InputNumber2, Slider_maxvalue,
+Slider_minvalue, Slider_values, SliderContainer, SliderRange, TableRecords, TableRecords_BottomNavigation, TableRecords_EvenLine, TableRecords_Header, TableRecords_Label,
+TableRecords_OddLine, TableRecords_OddRow, TableRecords_TopNavigation, TableRecordsResponsive, tablet, TableVerticalAlign, Tabs, Tabs__content, Tabs__Loading, Tabs__tab,
+Tabs_body, Tabs_header, Tabs_TabBody, Tabs_TabOff, Tabs_TabOn, Tabs_Wrapper, Tile, TileIcon, TileIcon_icon, TileIcon_text, TileIconText_icon, TileIconText_right, TileNumber_number,
+TileNumber_text, title, TitleMonth, TitleYear, ToggleButton, ToggleButton_label, tooltip_style, tooltip-content, tooltipster-arrow-border, tooltipster-arrow-bottom, tooltipster-arrow-bottom-left,
+tooltipster-arrow-bottom-right, tooltipster-content, tooltipstered, ui-slider-handle, ui-slider-handle:before, ui-slider-range, ui-state-active, UserInitials, ValidationMessage,
+Vertical, WizardParent, WizardStep, os-internal-ui-autocomplete, active, balloon, Expanded, ListNavigation_CurrentPageNumber, ListNavigation_DisabledPrevious,
+ListNavigation_Ellipsis, ListNavigation_PageNumber, ListNavigation_Previous, os-internal-ui-state-hover, weekend, Panel__Actions, TableRecords_ExpandedRow, time, off, on*/
+    div.Feedback_Message_Wrapper {
+        left: 0;
+        z-index: 5000;
+    }
+}

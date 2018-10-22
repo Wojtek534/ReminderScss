@@ -1,0 +1,8 @@
+.Panel{
+  background-color: white;
+  padding: 25px;
+  border: 1px solid $border-color;
+  //box-shadow: 1px 1px 1px lighten($primary-color, 30%);
+  margin: 5px;
+  border-radius: $border-radius;
+}

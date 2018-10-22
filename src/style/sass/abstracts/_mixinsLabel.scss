@@ -1,0 +1,17 @@
+@mixin CustomLabel($CustomName, $CustomColor, $CustomBackground) {
+  .Label.#{$CustomName} {
+      background-color: $CustomBackground;
+      color: $CustomColor;
+  }
+  .Icon#{$CustomName} {
+      color: $CustomBackground !important;
+  }
+}
+
+@include CustomLabel("Red", $white-color, $red-color);
+@include CustomLabel("Green", $white-color, $green-color);
+@include CustomLabel("Blue", $white-color, $blue-color);
+@include CustomLabel("Purple", $white-color, $purple-color);
+@include CustomLabel("Grey", $white-color, $grey-color);
+@include CustomLabel("Yellow", $white-color, $yellow-color);
+@include CustomLabel("Orange", $white-color, $orange-color);

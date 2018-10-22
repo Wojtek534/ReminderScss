@@ -1,0 +1,49 @@
+.Side-menu {
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid $border-color;
+}
+
+.Side-menu a {
+    color: #0c0c0c;
+    transition: .3s;
+}
+
+.Side-item {
+    font-size: 14px;
+    font-weight: 600;
+    background-color: $white-color;
+    padding: 15px 25px;
+    margin: 0px;
+    display: block;
+    border-bottom: 1px solid $border-color;
+    text-decoration: none;
+}
+
+.Side-item,
+.Side-Item:link,
+.Side-item:active .Side-item:hover {
+    transition: .3s;
+}
+
+.Side-item:active {
+    border-left: 2px solid black;
+}
+
+.Side-item a:active {
+    border-left: 2px solid black;
+}
+
+.Side-item.a:active {
+    border-left: 2px solid black;
+}
+
+.Side-item:hover,
+.Side-item.Active {
+    background-color: #0c0c0c;
+    color: $white-color;
+}
+
+.Side-item:hover a {
+    color: $white-color;
+}
